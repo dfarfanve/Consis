@@ -1,0 +1,159 @@
+{
+	"info": {
+		"_postman_id": "f5f348cb-b1f7-4021-9494-a61e7c5f6aed",
+		"name": "Pro",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Emision PRO",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "a664abed-aeb2-4021-aa0f-6e9490f55b95",
+						"exec": [
+							"const echoPostRequest = {",
+							"  url: 'http://172.23.2.44:9080/ws/rest/login',",
+							"  method: 'POST',",
+							"  header: 'Content-Type:application/vdn.acsele.api.v1+json',",
+							"  body: {",
+							"    mode: 'application/json',",
+							"    raw: JSON.stringify(",
+							"        {",
+							"        \tuserName:'mramos',",
+							"        \tpassword:'josmir',",
+							"        \tinstance:'RIMAC',",
+							"        \tcountry:8",
+							"        })",
+							"  }",
+							"};",
+							"",
+							"pm.sendRequest(echoPostRequest, function (err, res) {",
+							"    var token = res.headers;",
+							"    console.log(res.headers instanceof Array)",
+							"",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/vdn.acsele.api.v1+json;charset=UTF-8",
+						"description": "quotations/create   y  policies/emite",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"type": "text",
+						"value": "token={{token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"quotationNumber\": \"checkEmi101\",\n  \"policyNumber\": \"checkEmi101\",\n  \"initialDate\": \"2019-08-12\",\n  \"finishDate\": \"2029-08-12\",\n  \"validity\": 0,\n  \"productEntity\": {\n    \"description\": \"FlexiVida\"\n  },\n  \"financialPlansEntity\": {\n    \"description\": \"PagoUnico\"\n  },\n  \"currencyEntity\": {\n    \"isoCode\": \"Dolar\",\n    \"description\": \"Dolar\"\n  },\n  \"eventEntity\": {\n    \"description\": \"Aceptar\",\n    \"dynamicData\": [\n      {\n        \"etiqueta\": \"FechaMovimiento\",\n        \"value\": \"2019-08-12\"\n      },\n      {\n        \"etiqueta\": \"FechaEvento\",\n        \"value\": \"2019-08-12\"\n      }\n    ]\n  },\n  \"dynamicData\": [\n    {\n      \"etiqueta\": \"NumeroHijosInv\",\n      \"value\": \"0\"\n    },\n    {\n      \"etiqueta\": \"NumeroPadres\",\n      \"value\": \"0\"\n    },\n    {\n      \"etiqueta\": \"TipoRenta\",\n      \"value\": \"RentasBajas\"\n    },\n    {\n      \"etiqueta\": \"TipoRiesgo\",\n      \"value\": \"Preferente\"\n    },\n    {\n      \"etiqueta\": \"FechaEmision\",\n      \"value\": \"2019-07-15\"\n    },\n    {\n      \"etiqueta\": \"Moneda\",\n      \"value\": \"Dolar\"\n    },\n    {\n      \"etiqueta\": \"DuracionPoliza\",\n      \"value\": \"10\"\n    },\n    {\n      \"etiqueta\": \"DuracionVFPDT\",\n      \"value\": \"10\"\n    },\n    {\n      \"etiqueta\": \"DuracionInversionSC\",\n      \"value\": \"10\"\n    },\n    {\n      \"etiqueta\": \"SumaAsegurada\",\n      \"value\": \"120000\"\n    },\n    {\n      \"etiqueta\": \"FrecuenciaPagoInv\",\n      \"value\": \"Mensual\"\n    },\n    {\n      \"etiqueta\": \"PrimaConvenida\",\n      \"value\": \"500.00\"\n    },\n    {\n      \"etiqueta\": \"NumeroRecRecaudac\",\n      \"value\": \"136536474\"\n    }\n  ],\n  \"riskUnitEntities\": [\n    {\n      \"riskUnitNumber\": \"1\",\n      \"plansEntity\": {\n        \"description\": \"PlanFuturoProtegido\"\n      },\n      \"insuranceObjectEntities\": [\n        {\n          \"insuranceObjectNumber\": \"1\",\n          \"policyFundEntities\": [\n            {\n              \"accountName\": \"Cuenta Ahorro\",\n              \"fundName\": \"Conservador Dólares\",\n              \"percentage\": \"100\"\n            },\n            {\n              \"accountName\": \"Cuenta Basica\",\n              \"fundName\": \"Conservador Dólares\",\n              \"percentage\": \"100\"\n            }\n          ],\n          \"participationEntities\": [\n            {\n              \"rol\": \"Asegurado\",\n              \"percentage\": 100,\n              \"codeIdentifier\": \"18985669\",\n              \"dynamicData\": [\n                {\n                  \"etiqueta\": \"Porcentaje\",\n                  \"value\": \"100\"\n                }\n              ]\n            }\n          ],\n          \"dynamicData\": [\n            {\n              \"etiqueta\": \"NombreBenefUno\",\n              \"value\": \"MARIA JOSE LOPEZ ROJAS\"\n            },\n            {\n              \"etiqueta\": \"RelBeneficiarioUno\",\n              \"value\": \"Conyuge\"\n            },\n            {\n              \"etiqueta\": \"ParticipBenefUno\",\n              \"value\": \"50\"\n            },\n            {\n              \"etiqueta\": \"IDUnicoBeneficiarioUno\",\n              \"value\": \"354568921\"\n            },\n            {\n              \"etiqueta\": \"NombreBenefDos\",\n              \"value\": \"MARCO CANALES LOPEZ\"\n            },\n            {\n              \"etiqueta\": \"RelBeneficiarioDos\",\n              \"value\": \"Hijo(a)\"\n            },\n            {\n              \"etiqueta\": \"ParticipBenefDos\",\n              \"value\": \"50\"\n            },\n            {\n              \"etiqueta\": \"IDUnicoBeneficiarioDos\",\n              \"value\": \"856985454\"\n            },\n            {\n              \"etiqueta\": \"DesPreferente\",\n              \"value\": \"NO\"\n            },\n            {\n              \"etiqueta\": \"TipoAseguradoInv\",\n              \"value\": \"Titular\"\n            },\n            {\n              \"etiqueta\": \"RelacionParentesco\",\n              \"value\": \"Asegurado\"\n            },\n            {\n              \"etiqueta\": \"Sexo\",\n              \"value\": \"M\"\n            },\n            {\n              \"etiqueta\": \"FechaNacimiento\",\n              \"value\": \"1989-07-09\"\n            },\n            {\n              \"etiqueta\": \"FumadorCondicion\",\n              \"value\": \"No Fumador\"\n            }\n          ],\n          \"coverageEntities\": [\n            {\n              \"name\": \"Fallecimiento\",\n              \"description\": \"Fallecimiento\",\n              \"dynamicData\": [\n                {\n                  \"etiqueta\": \"COVSumaAsegurada\",\n                  \"value\": \"120000\"\n                },\n                {\n                  \"etiqueta\": \"COVPrimaBasica\",\n                  \"value\": \"101.95\"\n                },\n                {\n                  \"etiqueta\": \"COVTasaBasica\",\n                  \"value\": \"5.0974\"\n                }\n              ]\n            }\n          ]\n        }\n      ]\n    }\n  ],\n  \"participationEntities\": [\n    {\n      \"rol\": \"Asesor\",\n      \"percentage\": 100,\n      \"codeIdentifier\": \"203\",\n      \"dynamicData\": [\n        {\n          \"etiqueta\": \"Porcentaje\",\n          \"value\": \"100\"\n        }\n      ]\n    },\n    {\n      \"rol\": \"Beneficiario\",\n      \"percentage\": 100,\n      \"codeIdentifier\": \"33082482\",\n      \"dynamicData\": [\n        {\n          \"etiqueta\": \"Porcentaje\",\n          \"value\": \"100\"\n        },\n        {\n          \"etiqueta\": \"TipoBeneficiario\",\n          \"value\": \"Endosatario\"\n        },\n        {\n          \"etiqueta\": \"RelacionBeneficiario\",\n          \"value\": \"Entidad financiera\"\n        }\n      ]\n    },\n    {\n      \"rol\": \"Contratantes\",\n      \"percentage\": 100,\n      \"codeIdentifier\": \"18985669\",\n      \"dynamicData\": [\n        {\n          \"etiqueta\": \"Porcentaje\",\n          \"value\": \"100\"\n        }\n      ]\n    },\n    {\n      \"rol\": \"Pagador\",\n      \"percentage\": 100,\n      \"codeIdentifier\": \"18985669\",\n      \"thirdPartyPaymentModeEntity\": {\n        \"paymentMode\": \"TarjetadeCredito\"\n      },\n      \"dynamicData\": [\n        {\n          \"etiqueta\": \"Porcentaje\",\n          \"value\": \"100\"\n        },\n        {\n          \"etiqueta\": \"NumeroPagoFacil\",\n          \"value\": \"90015060\"\n        }\n      ]\n    }\n  ]\n}"
+				},
+				"url": {
+					"raw": "http://172.23.2.44:9080/ws/rest/policies/emite",
+					"protocol": "http",
+					"host": [
+						"172",
+						"23",
+						"2",
+						"44"
+					],
+					"port": "9080",
+					"path": [
+						"ws",
+						"rest",
+						"policies",
+						"emite"
+					]
+				},
+				"description": "AERIMACVI-275"
+			},
+			"response": []
+		},
+		{
+			"name": "Cotizacion Pro",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "197ab4c8-98b9-4e54-b6c8-e60b1107376b",
+						"exec": [
+							"const echoPostRequest = {",
+							"  url: 'http://rssbappv01.rimac.com.pe:9082/ws/rest/login',",
+							"  method: 'POST',",
+							"  header: 'Content-Type:application/vdn.acsele.api.v1+json',",
+							"  body: {",
+							"    mode: 'application/json',",
+							"    raw: JSON.stringify(",
+							"        {",
+							"        \tuserName:'xt1600',",
+							"        \tpassword:'123456',",
+							"        \tinstance:'RIMAC',",
+							"        \tcountry:8",
+							"        })",
+							"  }",
+							"};",
+							"",
+							"pm.sendRequest(echoPostRequest, function (err, res) {",
+							"    var token = res.headers;",
+							"    console.log(res.headers instanceof Array)",
+							"",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"description": "quotations/create   y  policies/emite",
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/vdn.acsele.api.v1+json;charset=UTF-8"
+					},
+					{
+						"key": "Cookie",
+						"type": "text",
+						"value": "token={{token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"quotationNumber\": \"90013760\",\r\n    \"policyNumber\": \"90013760\",\r\n    \"initialDate\": \"2020-03-10\",\r\n    \"finishDate\": \"2040-03-10\",\r\n    \"validity\": 0,\r\n    \"productEntity\": {\r\n        \"description\": \"VIVidaSegUniversitario\"\r\n    },\r\n    \"financialPlansEntity\": {\r\n        \"description\": \"PagoUnico\"\r\n    },\r\n    \"currencyEntity\": {\r\n        \"isoCode\": \"SOL\",\r\n        \"description\": \"Sol\",\r\n        \"detail\": \"PEN\"\r\n    },\r\n    \"eventEntity\": {\r\n        \"description\": \"Aceptar\",\r\n        \"dynamicData\": [\r\n            {\r\n                \"etiqueta\": \"FechaMovimiento\",\r\n                \"value\": \"2020-03-10\"\r\n            },\r\n            {\r\n                \"etiqueta\": \"FechaEvento\",\r\n                \"value\": \"2020-03-10\"\r\n            }\r\n        ]\r\n    },\r\n    \"dynamicData\": [\r\n        {\r\n            \"etiqueta\": \"TipoRenta\",\r\n            \"value\": \"RentasBajas\"\r\n        },\r\n        {\r\n            \"etiqueta\": \"TipoRiesgo\",\r\n            \"value\": \"Preferente\"\r\n        },\r\n        {\r\n            \"etiqueta\": \"FechaEmision\",\r\n            \"value\": \"2020-03-10\"\r\n        },\r\n        {\r\n            \"etiqueta\": \"Moneda\",\r\n            \"value\": \"Sol\"\r\n        },\r\n        {\r\n            \"etiqueta\": \"PeriodoPagoPrima\",\r\n            \"value\": \"20\"\r\n        },\r\n        {\r\n            \"etiqueta\": \"DuracionSegUniv\",\r\n            \"value\": \"20\"\r\n        },\r\n        {\r\n            \"etiqueta\": \"SumaAsegurada\",\r\n            \"value\": \"100000\"\r\n        },\r\n        {\r\n            \"etiqueta\": \"TipoPago\",\r\n            \"value\": \"2\"\r\n        },\r\n        {\r\n            \"etiqueta\": \"ColaboradorRimac\",\r\n            \"value\": \"No\"\r\n        },\r\n        {\r\n            \"etiqueta\": \"RequiereFactura\",\r\n            \"value\": \"NO\"\r\n        },\r\n        {\r\n            \"etiqueta\": \"FrecuenciaPagoUniv\",\r\n            \"value\": \"1\"\r\n        },\r\n        {\r\n            \"etiqueta\": \"NumeroRecRecaudac\",\r\n            \"value\": 142724852\r\n        }\r\n    ],\r\n    \"riskUnitEntities\": [\r\n        {\r\n            \"insuranceObjectEntities\": [\r\n                {\r\n                    \"insuranceObjectNumber\": \"1\",\r\n                    \"coverageEntities\": [\r\n                        {\r\n                            \"name\": \"Fallecimiento\",\r\n                            \"description\": \"Fallecimiento\",\r\n                            \"dynamicData\": [\r\n                                {\r\n                                    \"etiqueta\": \"COVSumaAsegurada\",\r\n                                    \"value\": \"100000.00\"\r\n                                },\r\n                                {\r\n                                    \"etiqueta\": \"COVPrimaBasica\"\r\n                                },\r\n                                {\r\n                                    \"etiqueta\": \"COVTasaBasica\"\r\n                                }\r\n                            ]\r\n                        },\r\n                        {\r\n                            \"name\": \"Sobrevivencia\",\r\n                            \"description\": \"Sobrevivencia\",\r\n                            \"dynamicData\": [\r\n                                {\r\n                                    \"etiqueta\": \"COVSumaAsegurada\",\r\n                                    \"value\": \"100000.00\"\r\n                                },\r\n                                {\r\n                                    \"etiqueta\": \"COVPrimaBasica\"\r\n                                },\r\n                                {\r\n                                    \"etiqueta\": \"COVTasaBasica\"\r\n                                }\r\n                            ]\r\n                        }\r\n                    ],\r\n                    \"participationEntities\": [\r\n                        {\r\n                            \"rol\": \"Asegurado\",\r\n                            \"percentage\": 100,\r\n                            \"codeIdentifier\": \"37371873\",\r\n                            \"dynamicData\": [\r\n                                {\r\n                                    \"etiqueta\": \"Porcentaje\",\r\n                                    \"value\": \"100\"\r\n                                }\r\n                            ]\r\n                        }\r\n                    ],\r\n                    \"dynamicData\": [\r\n                        {\r\n                            \"etiqueta\": \"DesPreferente\",\r\n                            \"value\": \"NO\"\r\n                        },\r\n                        {\r\n                            \"etiqueta\": \"TIPOASEGURADOINV\",\r\n                            \"value\": \"Titular\"\r\n                        },\r\n                        {\r\n                            \"etiqueta\": \"RelacionParentesco\",\r\n                            \"value\": \"Asegurado\"\r\n                        },\r\n                        {\r\n                            \"etiqueta\": \"Sexo\",\r\n                            \"value\": \"F\"\r\n                        },\r\n                        {\r\n                            \"etiqueta\": \"FechaNacimiento\",\r\n                            \"value\": \"1980-04-22\"\r\n                        },\r\n                        {\r\n                            \"etiqueta\": \"FumadorCondicion\",\r\n                            \"value\": \"No Fumador\"\r\n                        }\r\n                    ],\r\n                    \"policyFundEntities\": []\r\n                }\r\n            ],\r\n            \"plansEntity\": {\r\n                \"description\": \"PlanSegUniversitario\"\r\n            },\r\n            \"riskUnitNumber\": \"1\"\r\n        }\r\n    ],\r\n    \"participationEntities\": [\r\n        {\r\n            \"rol\": \"Asesor\",\r\n            \"percentage\": 100,\r\n            \"codeIdentifier\": \"17120961\",\r\n            \"dynamicData\": [\r\n                {\r\n                    \"etiqueta\": \"Porcentaje\",\r\n                    \"value\": \"100\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"rol\": \"Contratantes\",\r\n            \"percentage\": 100,\r\n            \"codeIdentifier\": \"37371873\",\r\n            \"dynamicData\": [\r\n                {\r\n                    \"etiqueta\": \"Porcentaje\",\r\n                    \"value\": \"100\"\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"rol\": \"Pagador\",\r\n            \"percentage\": 100,\r\n            \"codeIdentifier\": \"37371873\",\r\n            \"thirdPartyPaymentModeEntity\": {\r\n                \"paymentMode\": \"Directo\"\r\n            },\r\n            \"dynamicData\": [\r\n                {\r\n                    \"etiqueta\": \"Porcentaje\",\r\n                    \"value\": \"100\"\r\n                },\r\n                {\r\n                    \"etiqueta\": \"NumeroPagoFacil\",\r\n                    \"value\": \"62196389\"\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}"
+				},
+				"url": {
+					"raw": "http://rssbappv01.rimac.com.pe:9082/ws/rest/quotations/create",
+					"protocol": "http",
+					"host": [
+						"rssbappv01",
+						"rimac",
+						"com",
+						"pe"
+					],
+					"port": "9082",
+					"path": [
+						"ws",
+						"rest",
+						"quotations",
+						"create"
+					]
+				},
+				"description": "AERIMACVI-275"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

@@ -1,0 +1,249 @@
+{
+	"info": {
+		"_postman_id": "08ee65f0-dba6-4b97-8994-9c3429811c5a",
+		"name": "Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Cotización Test 9080",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "a664abed-aeb2-4021-aa0f-6e9490f55b95",
+						"exec": [
+							"const echoPostRequest = {",
+							"  url: 'http://172.23.2.44:9080/ws/rest/login',",
+							"  method: 'POST',",
+							"  header: 'Content-Type:application/vdn.acsele.api.v1+json',",
+							"  body: {",
+							"    mode: 'application/json',",
+							"    raw: JSON.stringify(",
+							"        {",
+							"        \tuserName:'dfarfan',",
+							"        \tpassword:'Rimac2020',",
+							"        \tinstance:'RIMAC',",
+							"        \tcountry:8",
+							"        })",
+							"  }",
+							"};",
+							"",
+							"pm.sendRequest(echoPostRequest, function (err, res) {",
+							"    var token = res.headers;",
+							"    console.log(res.headers instanceof Array)",
+							"",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/vdn.acsele.api.v1+json;charset=UTF-8",
+						"description": "quotations/create   y  policies/emite",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"type": "text",
+						"value": "token={{token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"quotationNumber\":\"738377601\",\"initialDate\":\"2020-02-24\",\"finishDate\":\"2080-02-24\",\"validity\":0,\"productEntity\":{\"description\":\"FlexiVida\"},\"financialPlansEntity\":{\"description\":\"PagoUnico\"},\"currencyEntity\":{\"isoCode\":\"Sol\",\"description\":\"Sol\"},\"eventEntity\":{\"description\":\"Cotizar\",\"dynamicData\":[{\"etiqueta\":\"FechaMovimiento\",\"value\":\"2020-02-24\"},{\"etiqueta\":\"FechaEvento\",\"value\":\"2020-02-24\"}]},\"riskUnitEntities\":[{\"riskUnitNumber\":\"1\",\"insuranceObjectEntities\":[{\"insuranceObjectNumber\":\"1\",\"coverageEntities\":[{\"name\":\"AnticipoDeCapitalPorEnfermedadesGrave\",\"description\":\"AnticipoDeCapitalPorEnfermedadesGrave\",\"dynamicData\":[{\"etiqueta\":\"COVSumaAsegurada\",\"value\":\"167000\"},{\"etiqueta\":\"COVPrimaBasica\",\"value\":\"2038.74\"},{\"etiqueta\":\"COVTasaBasica\",\"value\":\"12.208\"}]},{\"name\":\"DispensaDePagoDePrimasPorIncapacidad\",\"description\":\"DispensaDePagoDePrimasPorIncapacidad\",\"dynamicData\":[{\"etiqueta\":\"COVSumaAsegurada\",\"value\":\"450000\"},{\"etiqueta\":\"COVPrimaBasica\",\"value\":\"50.51\"},{\"etiqueta\":\"COVTasaBasica\",\"value\":\"0.1122\"}]},{\"name\":\"Fallecimiento\",\"description\":\"Fallecimiento\",\"dynamicData\":[{\"etiqueta\":\"COVSumaAsegurada\",\"value\":\"450000\"},{\"etiqueta\":\"COVPrimaBasica\",\"value\":\"15050.15\"},{\"etiqueta\":\"COVTasaBasica\",\"value\":\"33.4448\"}]},{\"name\":\"IndemnizacionAdicionalPorFallecimientoAccidental\",\"description\":\"IndemnizacionAdicionalPorFallecimientoAccidental\",\"dynamicData\":[{\"etiqueta\":\"COVSumaAsegurada\",\"value\":\"450000\"},{\"etiqueta\":\"COVPrimaBasica\",\"value\":\"563.33\"},{\"etiqueta\":\"COVTasaBasica\",\"value\":\"1.2518\"}]},{\"name\":\"InvalidezTotalyPermanenteAccidenteEnfermedad\",\"description\":\"InvalidezTotalyPermanenteAccidenteEnfermedad\",\"dynamicData\":[{\"etiqueta\":\"COVSumaAsegurada\",\"value\":\"450000\"},{\"etiqueta\":\"COVPrimaBasica\",\"value\":\"1686.33\"},{\"etiqueta\":\"COVTasaBasica\",\"value\":\"3.7474\"}]},{\"name\":\"PerdidaExistenciaIndependiente\",\"description\":\"PerdidaExistenciaIndependiente\",\"dynamicData\":[{\"etiqueta\":\"COVSumaAsegurada\",\"value\":\"167000\"},{\"etiqueta\":\"COVPrimaBasica\",\"value\":\"320.67\"},{\"etiqueta\":\"COVTasaBasica\",\"value\":\"1.9202\"}]},{\"name\":\"RentaHospitalariaPorAccidente\",\"description\":\"RentaHospitalariaPorAccidente\",\"dynamicData\":[{\"etiqueta\":\"COVSumaAsegurada\",\"value\":\"350\"},{\"etiqueta\":\"COVPrimaBasica\",\"value\":\"168.9\"},{\"etiqueta\":\"COVTasaBasica\",\"value\":\"482.5705\"}]},{\"name\":\"Sepelio\",\"description\":\"Sepelio\",\"dynamicData\":[{\"etiqueta\":\"COVSumaAsegurada\",\"value\":\"10000\"},{\"etiqueta\":\"COVPrimaBasica\",\"value\":\"386.18\"},{\"etiqueta\":\"COVTasaBasica\",\"value\":\"38.6182\"}]},{\"name\":\"IndemnizacionPorCirugias\",\"description\":\"IndemnizacionPorCirugias\",\"dynamicData\":[{\"etiqueta\":\"COVSumaAsegurada\",\"value\":\"5000\"},{\"etiqueta\":\"COVPrimaBasica\",\"value\":\"649.91\"},{\"etiqueta\":\"COVTasaBasica\",\"value\":\"129.9818\"}]},{\"name\":\"DesempleoInvoluntarioEIncapacidadTemporal\",\"description\":\"DesempleoInvoluntarioEIncapacidadTemporal\",\"dynamicData\":[{\"etiqueta\":\"COVSumaAsegurada\",\"value\":\"15000\"},{\"etiqueta\":\"COVPrimaBasica\",\"value\":\"640.72\"},{\"etiqueta\":\"COVTasaBasica\",\"value\":\"61.9052\"}]}],\"dynamicData\":[{\"etiqueta\":\"RelBeneficiarioCinco\",\"value\":\"Titular\"},{\"etiqueta\":\"RelBeneficiarioDos\",\"value\":\"Titular\"},{\"etiqueta\":\"RelBeneficiarioCuatro\",\"value\":\"Titular\"},{\"etiqueta\":\"RelBeneficiarioNueve\",\"value\":\"Titular\"},{\"etiqueta\":\"DesPreferente\",\"value\":\"NO\"},{\"etiqueta\":\"RelBeneficiarioDiez\",\"value\":\"Titular\"},{\"etiqueta\":\"RelBeneficiarioSiete\",\"value\":\"Titular\"},{\"etiqueta\":\"RelBeneficiarioOcho\",\"value\":\"Titular\"},{\"etiqueta\":\"RelBeneficiarioSeis\",\"value\":\"Titular\"},{\"etiqueta\":\"RelBeneficiarioTres\",\"value\":\"Titular\"},{\"etiqueta\":\"TipoAseguradoInv\",\"value\":\"Titular\"},{\"etiqueta\":\"RelacionParentesco\",\"value\":\"Asegurado\"},{\"etiqueta\":\"Sexo\",\"value\":\"F\"},{\"etiqueta\":\"FechaNacimiento\",\"value\":\"1987-07-10\"},{\"etiqueta\":\"FumadorCondicion\"}]}],\"plansEntity\":{\"description\":\"PlanFuturoProtegido\"}}],\"operationId\":0,\"dynamicData\":[{\"etiqueta\":\"NumeroHijosInv\",\"value\":\"0\"},{\"etiqueta\":\"NumeroPadres\",\"value\":\"0\"},{\"etiqueta\":\"TipoRenta\",\"value\":\"RentasBajas\"},{\"etiqueta\":\"TipoRiesgo\",\"value\":\"Estandar\"},{\"etiqueta\":\"FechaEmision\",\"value\":\"2020-02-24\"},{\"etiqueta\":\"Moneda\",\"value\":\"SOL\"},{\"etiqueta\":\"DuracionPoliza\",\"value\":\"60\"},{\"etiqueta\":\"DuracionVFPDT\",\"value\":\"60\"},{\"etiqueta\":\"DuracionInversionSC\",\"value\":\"20\"},{\"etiqueta\":\"SumaAsegurada\",\"value\":\"450000\"},{\"etiqueta\":\"FrecuenciaPagoInv\",\"value\":\"Anual\"}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://172.23.2.44:9080/ws/rest/quotations/create",
+					"protocol": "http",
+					"host": [
+						"172",
+						"23",
+						"2",
+						"44"
+					],
+					"port": "9080",
+					"path": [
+						"ws",
+						"rest",
+						"quotations",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Calcular Prima (Nuevo) Test 9081",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "a664abed-aeb2-4021-aa0f-6e9490f55b95",
+						"exec": [
+							"const echoPostRequest = {",
+							"  url: 'http://172.23.2.44:9081/ws/rest/login',",
+							"  method: 'POST',",
+							"  header: 'Content-Type:application/vdn.acsele.api.v1+json',",
+							"  body: {",
+							"    mode: 'application/json',",
+							"    raw: JSON.stringify(",
+							"        {",
+							"        \tuserName:'mramos',",
+							"        \tpassword:'josmir',",
+							"        \tinstance:'RIMAC',",
+							"        \tcountry:8",
+							"        })",
+							"  }",
+							"};",
+							"",
+							"pm.sendRequest(echoPostRequest, function (err, res) {",
+							"    var token = res.headers;",
+							"    console.log(res.headers instanceof Array)",
+							"",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/vdn.acsele.api.v1+json;charset=UTF-8",
+						"description": "quotations/create   y  policies/emite",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"type": "text",
+						"value": "token={{token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n   \"quotationNumber\":\"90001863ab13\",\r\n   \"initialDate\":\"2019-10-17\",\r\n   \"finishDate\":\"2049-10-17\",\r\n   \"validity\":0,\r\n   \"productEntity\":{ \r\n      \"description\":\"VIVidaTemporalTotal\"\r\n   },\r\n   \"financialPlansEntity\":{ \r\n      \"description\":\"PagoUnico\"\r\n   },\r\n   \"currencyEntity\":{ \r\n      \"isoCode\":\"USD\",\r\n      \"description\":\"Dolar\"\r\n   },\r\n   \"eventEntity\":{ \r\n      \"description\":\"Cotizar\",\r\n      \"dynamicData\":[ \r\n         { \r\n            \"key\":\"FechaMovimiento\",\r\n            \"etiqueta\":\"FechaMovimiento\",\r\n            \"value\":\"2019-10-17\"\r\n         },\r\n         { \r\n            \"key\":\"FechaEvento\",\r\n            \"etiqueta\":\"FechaEvento\",\r\n            \"value\":\"2019-10-17\"\r\n         }\r\n      ]\r\n   },\r\n   \"dynamicData\":[ \r\n      { \r\n         \"key\":\"TipoRenta\",\r\n         \"etiqueta\":\"TipoRenta\",\r\n         \"value\":\"RentaAltas\"\r\n      },\r\n      { \r\n         \"key\":\"TipoRiesgo\",\r\n         \"etiqueta\":\"TipoRiesgo\",\r\n         \"value\":\"Preferente\"\r\n      },\r\n      { \r\n         \"key\":\"FechaEmision\",\r\n         \"etiqueta\":\"FechaEmision\",\r\n         \"value\":\"2019-10-17\"\r\n      },\r\n      { \r\n         \"key\":\"Moneda\",\r\n         \"etiqueta\":\"Moneda\",\r\n         \"value\":\"Dolar\"\r\n      },\r\n      { \r\n         \"key\":\"PeriodoPagoTT\",\r\n         \"etiqueta\":\"PeriodoPagoTT\",\r\n         \"value\":\"Treinta\"\r\n      },\r\n      { \r\n         \"key\":\"DuracionTempTotal\",\r\n         \"etiqueta\":\"DuracionTempTotal\",\r\n         \"value\":\"Treinta\"\r\n      },\r\n      { \r\n         \"key\":\"SumaAsegurada\",\r\n         \"etiqueta\":\"SumaAsegurada\",\r\n         \"value\":\"500000\"\r\n      },\r\n      { \r\n         \"key\":\"TipoPago\",\r\n         \"etiqueta\":\"TipoPago\"\r\n      },\r\n      { \r\n         \"key\":\"ColaboradorRimac\",\r\n         \"etiqueta\":\"ColaboradorRimac\",\r\n         \"value\":\"No\"\r\n      },\r\n      { \r\n         \"key\":\"RequiereFactura\",\r\n         \"etiqueta\":\"RequiereFactura\",\r\n         \"value\":\"No\"\r\n      },\r\n      { \r\n         \"key\":\"FrecuenciaPagoUniv\",\r\n         \"etiqueta\":\"FrecuenciaPagoUniv\",\r\n         \"value\":\"Mensual\"\r\n      }\r\n   ],\r\n   \"riskUnitEntities\":[ \r\n      { \r\n         \"riskUnitNumber\":\"1\",\r\n         \"insuranceObjectEntities\":[ \r\n            { \r\n               \"insuranceObjectNumber\":\"1\",\r\n               \"coverageEntities\":[ \r\n                  { \r\n                     \"name\":\"InvalidezTotalyPermanenteAccidenteEnfermedad\",\r\n                     \"description\":\"InvalidezTotalyPermanenteAccidenteEnfermedad\",\r\n                     \"dynamicData\":[ \r\n                        { \r\n                           \"key\":\"COVSumaAsegurada\",\r\n                           \"etiqueta\":\"COVSumaAsegurada\"\r\n                        }\r\n                     ]\r\n                  }\r\n               ],\r\n               \"participationEntities\":[ \r\n\r\n               ],\r\n               \"dynamicData\":[ \r\n                  { \r\n                     \"key\":\"RelBeneficiarioUno\",\r\n                     \"etiqueta\":\"RelBeneficiarioUno\",\r\n                     \"value\":\"Titular\"\r\n                  },\r\n                  { \r\n                     \"key\":\"DesPreferente\",\r\n                     \"etiqueta\":\"DesPreferente\",\r\n                     \"value\":\"No\"\r\n                  },\r\n                  { \r\n                     \"key\":\"FumadorCondicion\",\r\n                     \"etiqueta\":\"FumadorCondicion\",\r\n                     \"value\":\"No\"\r\n                  },\r\n                  { \r\n                     \"key\":\"RelacionParentesco\",\r\n                     \"etiqueta\":\"RelacionParentesco\",\r\n                     \"value\":\"Asegurado\"\r\n                  },\r\n                  { \r\n                     \"key\":\"TipoAseguradoInv\",\r\n                     \"etiqueta\":\"TipoAseguradoInv\",\r\n                     \"value\":\"Titular\"\r\n                  },\r\n                  { \r\n                     \"key\":\"Sexo\",\r\n                     \"etiqueta\":\"Sexo\",\r\n                     \"value\":\"F\"\r\n                  },\r\n                  { \r\n                     \"key\":\"FechaNacimiento\",\r\n                     \"etiqueta\":\"FechaNacimiento\",\r\n                     \"value\":\"1991-05-22\"\r\n                  }\r\n               ]\r\n            }\r\n         ],\r\n         \"plansEntity\":{ \r\n            \"description\":\"PlanVidaTemporal\"\r\n         }\r\n      }\r\n   ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://172.23.2.44:9081/ws/rest/quotations/calculate",
+					"protocol": "http",
+					"host": [
+						"172",
+						"23",
+						"2",
+						"44"
+					],
+					"port": "9081",
+					"path": [
+						"ws",
+						"rest",
+						"quotations",
+						"calculate"
+					]
+				},
+				"description": "AERIMACVI-275"
+			},
+			"response": []
+		},
+		{
+			"name": "Emision Test ",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "a664abed-aeb2-4021-aa0f-6e9490f55b95",
+						"exec": [
+							"const echoPostRequest = {",
+							"  url: 'http://172.23.2.44:9080/ws/rest/login',",
+							"  method: 'POST',",
+							"  header: 'Content-Type:application/vdn.acsele.api.v1+json',",
+							"  body: {",
+							"    mode: 'application/json',",
+							"    raw: JSON.stringify(",
+							"        {",
+							"        \tuserName:'entrenamiento2',",
+							"        \tpassword:'daniel',",
+							"        \tinstance:'RIMAC',",
+							"        \tcountry:8",
+							"        })",
+							"  }",
+							"};",
+							"",
+							"pm.sendRequest(echoPostRequest, function (err, res) {",
+							"    var token = res.headers;",
+							"    console.log(res.headers instanceof Array)",
+							"",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/vdn.acsele.api.v1+json;charset=UTF-8",
+						"description": "quotations/create   y  policies/emite",
+						"type": "text"
+					},
+					{
+						"key": "Cookie",
+						"type": "text",
+						"value": "token={{token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"quotationNumber\":\"738377601\",\"policyNumber\":\"738377601\",\"initialDate\":\"2020-02-24\",\"finishDate\":\"2080-02-24\",\"validity\":0,\"productEntity\":{\"description\":\"FlexiVida\"},\"financialPlansEntity\":{\"description\":\"PagoUnico\"},\"currencyEntity\":{\"isoCode\":\"Sol\",\"description\":\"SOL\"},\"eventEntity\":{\"description\":\"Aceptar\",\"dynamicData\":[{\"etiqueta\":\"FechaMovimiento\",\"value\":\"2020-02-24\"},{\"etiqueta\":\"FechaEvento\",\"value\":\"2020-02-24\"}]},\"riskUnitEntities\":[{\"riskUnitNumber\":\"1\",\"insuranceObjectEntities\":[{\"insuranceObjectNumber\":\"1\",\"coverageEntities\":[{\"name\":\"AnticipoDeCapitalPorEnfermedadesGrave\",\"description\":\"AnticipoDeCapitalPorEnfermedadesGrave\",\"dynamicData\":[{\"etiqueta\":\"COVSumaAsegurada\",\"value\":\"167000\"},{\"etiqueta\":\"COVPrimaBasica\",\"value\":\"2038.74\"},{\"etiqueta\":\"COVTasaBasica\",\"value\":\"12.208\"}]},{\"name\":\"DispensaDePagoDePrimasPorIncapacidad\",\"description\":\"DispensaDePagoDePrimasPorIncapacidad\",\"dynamicData\":[{\"etiqueta\":\"COVSumaAsegurada\",\"value\":\"450000\"},{\"etiqueta\":\"COVPrimaBasica\",\"value\":\"50.51\"},{\"etiqueta\":\"COVTasaBasica\",\"value\":\"0.1122\"}]},{\"name\":\"Fallecimiento\",\"description\":\"Fallecimiento\",\"dynamicData\":[{\"etiqueta\":\"COVSumaAsegurada\",\"value\":\"450000\"},{\"etiqueta\":\"COVPrimaBasica\",\"value\":\"15050.15\"},{\"etiqueta\":\"COVTasaBasica\",\"value\":\"33.4448\"}]},{\"name\":\"IndemnizacionAdicionalPorFallecimientoAccidental\",\"description\":\"IndemnizacionAdicionalPorFallecimientoAccidental\",\"dynamicData\":[{\"etiqueta\":\"COVSumaAsegurada\",\"value\":\"450000\"},{\"etiqueta\":\"COVPrimaBasica\",\"value\":\"563.33\"},{\"etiqueta\":\"COVTasaBasica\",\"value\":\"1.2518\"}]},{\"name\":\"InvalidezTotalyPermanenteAccidenteEnfermedad\",\"description\":\"InvalidezTotalyPermanenteAccidenteEnfermedad\",\"dynamicData\":[{\"etiqueta\":\"COVSumaAsegurada\",\"value\":\"450000\"},{\"etiqueta\":\"COVPrimaBasica\",\"value\":\"1686.33\"},{\"etiqueta\":\"COVTasaBasica\",\"value\":\"3.7474\"}]},{\"name\":\"PerdidaExistenciaIndependiente\",\"description\":\"PerdidaExistenciaIndependiente\",\"dynamicData\":[{\"etiqueta\":\"COVSumaAsegurada\",\"value\":\"167000\"},{\"etiqueta\":\"COVPrimaBasica\",\"value\":\"320.67\"},{\"etiqueta\":\"COVTasaBasica\",\"value\":\"1.9202\"}]},{\"name\":\"RentaHospitalariaPorAccidente\",\"description\":\"RentaHospitalariaPorAccidente\",\"dynamicData\":[{\"etiqueta\":\"COVSumaAsegurada\",\"value\":\"350\"},{\"etiqueta\":\"COVPrimaBasica\",\"value\":\"168.9\"},{\"etiqueta\":\"COVTasaBasica\",\"value\":\"482.5705\"}]},{\"name\":\"Sepelio\",\"description\":\"Sepelio\",\"dynamicData\":[{\"etiqueta\":\"COVSumaAsegurada\",\"value\":\"10000\"},{\"etiqueta\":\"COVPrimaBasica\",\"value\":\"386.18\"},{\"etiqueta\":\"COVTasaBasica\",\"value\":\"38.6182\"}]},{\"name\":\"IndemnizacionPorCirugias\",\"description\":\"IndemnizacionPorCirugias\",\"dynamicData\":[{\"etiqueta\":\"COVSumaAsegurada\",\"value\":\"5000\"},{\"etiqueta\":\"COVPrimaBasica\",\"value\":\"649.91\"},{\"etiqueta\":\"COVTasaBasica\",\"value\":\"129.9818\"}]},{\"name\":\"DesempleoInvoluntarioEIncapacidadTemporal\",\"description\":\"DesempleoInvoluntarioEIncapacidadTemporal\",\"dynamicData\":[{\"etiqueta\":\"COVSumaAsegurada\",\"value\":\"15000\"},{\"etiqueta\":\"COVPrimaBasica\",\"value\":\"640.72\"},{\"etiqueta\":\"COVTasaBasica\",\"value\":\"61.9052\"}]}],\"participationEntities\":[{\"rol\":\"Asegurado\",\"percentage\":100.0,\"codeIdentifier\":\"17679921\",\"dynamicData\":[{\"etiqueta\":\"Porcentaje\",\"value\":\"100\"}]}],\"policyFundEntities\":[{\"accountName\":\"Cuenta Basica\",\"fundName\":\"Moderado Soles\",\"percentage\":\"100\"},{\"accountName\":\"Cuenta Ahorro\",\"fundName\":\"Moderado Soles\",\"percentage\":\"100\"}],\"dynamicData\":[{\"etiqueta\":\"RelBeneficiarioCinco\",\"value\":\"\"},{\"etiqueta\":\"RelBeneficiarioDos\",\"value\":\"\"},{\"etiqueta\":\"RelBeneficiarioCuatro\",\"value\":\"\"},{\"etiqueta\":\"RelBeneficiarioNueve\",\"value\":\"\"},{\"etiqueta\":\"DesPreferente\",\"value\":\"NO\"},{\"etiqueta\":\"RelBeneficiarioDiez\",\"value\":\"\"},{\"etiqueta\":\"RelBeneficiarioSiete\",\"value\":\"\"},{\"etiqueta\":\"RelBeneficiarioOcho\",\"value\":\"\"},{\"etiqueta\":\"RelBeneficiarioSeis\",\"value\":\"\"},{\"etiqueta\":\"RelBeneficiarioTres\",\"value\":\"\"},{\"etiqueta\":\"TipoAseguradoInv\",\"value\":\"Titular\"},{\"etiqueta\":\"RelacionParentesco\",\"value\":\"Asegurado\"},{\"etiqueta\":\"Sexo\",\"value\":\"F\"},{\"etiqueta\":\"FechaNacimiento\",\"value\":\"1987-07-10\"},{\"etiqueta\":\"FumadorCondicion\",\"value\":\"Fumador\"},{\"etiqueta\":\"RelBeneficiarioUno\",\"value\":\"Conviviente\"},{\"etiqueta\":\"ParticipBenefUno\",\"value\":\"100\"},{\"etiqueta\":\"NombreBenefUno\",\"value\":\"ROSALIND RAMIREZ SALAS\"},{\"etiqueta\":\"IDUnicoBeneficiario1\",\"value\":\"14834628\"}]}],\"plansEntity\":{\"description\":\"PlanFuturoProtegido\"}}],\"participationEntities\":[{\"rol\":\"Contratantes\",\"percentage\":100.0,\"codeIdentifier\":\"17679921\",\"dynamicData\":[{\"etiqueta\":\"Porcentaje\",\"value\":\"100\"}]},{\"rol\":\"Asesor\",\"percentage\":100.0,\"codeIdentifier\":\"19583241\",\"dynamicData\":[{\"etiqueta\":\"Porcentaje\",\"value\":\"100\"}]},{\"rol\":\"Pagador\",\"percentage\":100.0,\"codeIdentifier\":\"17679921\",\"thirdPartyPaymentModeEntity\":{\"paymentMode\":\"Directo\"},\"dynamicData\":[{\"etiqueta\":\"Porcentaje\",\"value\":\"100\"}]}],\"operationId\":0,\"policyId\":0,\"dynamicData\":[{\"etiqueta\":\"NumeroHijosInv\",\"value\":\"0\"},{\"etiqueta\":\"NumeroPadres\",\"value\":\"0\"},{\"etiqueta\":\"TipoRenta\",\"value\":\"RentasBajas\"},{\"etiqueta\":\"TipoRiesgo\",\"value\":\"Estandar\"},{\"etiqueta\":\"FechaEmision\",\"value\":\"2020-02-24\"},{\"etiqueta\":\"Moneda\",\"value\":\"SOL\"},{\"etiqueta\":\"DuracionPoliza\",\"value\":\"60\"},{\"etiqueta\":\"DuracionVFPDT\",\"value\":\"60\"},{\"etiqueta\":\"DuracionInversionSC\",\"value\":\"20\"},{\"etiqueta\":\"SumaAsegurada\",\"value\":\"450000\"},{\"etiqueta\":\"FrecuenciaPagoInv\",\"value\":\"Anual\"},{\"etiqueta\":\"PrimaConvenida\",\"value\":\"21555.44\"},{\"etiqueta\":\"NumeroRecRecaudac\",\"value\":\"136599548\"}]}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://172.23.2.44:9080/ws/rest/policies/emite",
+					"protocol": "http",
+					"host": [
+						"172",
+						"23",
+						"2",
+						"44"
+					],
+					"port": "9080",
+					"path": [
+						"ws",
+						"rest",
+						"policies",
+						"emite"
+					]
+				},
+				"description": "AERIMACVI-275"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

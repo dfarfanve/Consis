@@ -1,0 +1,164 @@
+{
+	"info": {
+		"_postman_id": "7447a640-93da-440c-8438-858b2bb2cdf6",
+		"name": "UAT",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Emision UAT",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "a664abed-aeb2-4021-aa0f-6e9490f55b95",
+						"exec": [
+							"const echoPostRequest = {",
+							"  url: 'http://172.23.2.40:9082/ws/rest/login',",
+							"  method: 'POST',",
+							"  header: 'Content-Type:application/vdn.acsele.api.v1+json',",
+							"  body: {",
+							"    mode: 'application/json',",
+							"    raw: JSON.stringify(",
+							"        {",
+							"        \tuserName:'omolina',",
+							"        \tpassword:'omolina',",
+							"        \tinstance:'RIMAC',",
+							"        \tcountry:8",
+							"        })",
+							"  }",
+							"};",
+							"",
+							"pm.sendRequest(echoPostRequest, function (err, res) {",
+							"    var token = res.headers;",
+							"    console.log(res.headers instanceof Array)",
+							"",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"description": "quotations/create   y  policies/emite",
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/vdn.acsele.api.v1+json;charset=UTF-8"
+					},
+					{
+						"key": "Cookie",
+						"type": "text",
+						"value": "token={{token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n   \"quotationNumber\":\"61575863UAT_001\",\r\n   \"policyNumber\":\"61575863UAT_001\",\r\n   \"initialDate\":\"2019-10-18\",\r\n   \"finishDate\":\"2069-10-18\",\r\n   \"validity\":0,\r\n   \"productEntity\":{ \r\n      \"description\":\"FlexiVida\"\r\n   },\r\n   \"financialPlansEntity\":{ \r\n      \"description\":\"PagoUnico\"\r\n   },\r\n   \"currencyEntity\":{ \r\n      \"isoCode\":\"USD\",\r\n      \"description\":\"Dolar\"\r\n   },\r\n   \"eventEntity\":{ \r\n      \"description\":\"Aceptar\",\r\n      \"dynamicData\":[ \r\n         { \r\n            \"etiqueta\":\"FechaMovimiento\",\r\n            \"value\":\"2019-10-18\"\r\n         },\r\n         { \r\n            \"etiqueta\":\"FechaEvento\",\r\n            \"value\":\"2019-10-18\"\r\n         }\r\n      ]\r\n   },\r\n   \"dynamicData\":[ \r\n      { \r\n         \"etiqueta\":\"NumeroHijosInv\",\r\n         \"value\":\"0\"\r\n      },\r\n      { \r\n         \"etiqueta\":\"NumeroPadres\",\r\n         \"value\":\"0\"\r\n      },\r\n      { \r\n         \"etiqueta\":\"TipoRenta\",\r\n         \"value\":\"RentasBajas\"\r\n      },\r\n      { \r\n         \"etiqueta\":\"TipoRiesgo\",\r\n         \"value\":\"Preferente\"\r\n      },\r\n      { \r\n         \"etiqueta\":\"FechaEmision\",\r\n         \"value\":\"2019-10-18\"\r\n      },\r\n      { \r\n         \"etiqueta\":\"Moneda\",\r\n         \"value\":\"Dolar\"\r\n      },\r\n      { \r\n         \"etiqueta\":\"DuracionPoliza\",\r\n         \"value\":\"50\"\r\n      },\r\n      { \r\n         \"etiqueta\":\"DuracionVFPDT\",\r\n         \"value\":\"50\"\r\n      },\r\n      { \r\n         \"etiqueta\":\"DuracionInversionSC\",\r\n         \"value\":\"20\"\r\n      },\r\n      { \r\n         \"etiqueta\":\"SumaAsegurada\",\r\n         \"value\":\"180000\"\r\n      },\r\n      { \r\n         \"etiqueta\":\"FrecuenciaPagoInv\",\r\n         \"value\":\"Anual\"\r\n      },\r\n      { \r\n         \"etiqueta\":\"PrimaConvenida\",\r\n         \"value\":\"4583.58\"\r\n      },\r\n      { \r\n         \"etiqueta\":\"NumeroRecRecaudac\",\r\n         \"value\":\"136536423\"\r\n      }\r\n   ],\r\n   \"riskUnitEntities\":[ \r\n      { \r\n         \"riskUnitNumber\":\"1\",\r\n         \"plansEntity\":{ \r\n            \"description\":\"PlanFuturoProtegido\"\r\n         },\r\n         \"insuranceObjectEntities\":[ \r\n            { \r\n               \"insuranceObjectNumber\":\"1\",\r\n               \"policyFundEntities\":[ \r\n                  { \r\n                     \"accountName\":\"Cuenta Ahorro\",\r\n                     \"fundName\":\"Moderado Dólares\",\r\n                     \"percentage\":\"100\"\r\n                  },\r\n                  { \r\n                     \"accountName\":\"Cuenta Basica\",\r\n                     \"fundName\":\"Moderado Dólares\",\r\n                     \"percentage\":\"100\"\r\n                  }\r\n               ],\r\n               \"participationEntities\":[ \r\n                  { \r\n                     \"rol\":\"Asegurado\",\r\n                     \"percentage\":100,\r\n                     \"codeIdentifier\":\"16255192\",\r\n                     \"dynamicData\":[ \r\n                        { \r\n                           \"etiqueta\":\"Porcentaje\",\r\n                           \"value\":\"100\"\r\n                        }\r\n                     ]\r\n                  }\r\n               ],\r\n               \"dynamicData\":[ \r\n                  { \r\n                     \"etiqueta\":\"RelBeneficiarioCinco\",\r\n                     \"value\":\"\"\r\n                  },\r\n                  { \r\n                     \"etiqueta\":\"RelBeneficiarioDos\",\r\n                     \"value\":\"\"\r\n                  },\r\n                  { \r\n                     \"etiqueta\":\"RelBeneficiarioCuatro\",\r\n                     \"value\":\"\"\r\n                  },\r\n                  { \r\n                     \"etiqueta\":\"RelBeneficiarioNueve\",\r\n                     \"value\":\"\"\r\n                  },\r\n                  { \r\n                     \"etiqueta\":\"DesPreferente\",\r\n                     \"value\":\"NO\"\r\n                  },\r\n                  { \r\n                     \"etiqueta\":\"RelBeneficiarioDiez\",\r\n                     \"value\":\"\"\r\n                  },\r\n                  { \r\n                     \"etiqueta\":\"RelBeneficiarioSiete\",\r\n                     \"value\":\"\"\r\n                  },\r\n                  { \r\n                     \"etiqueta\":\"RelBeneficiarioOcho\",\r\n                     \"value\":\"\"\r\n                  },\r\n                  { \r\n                     \"etiqueta\":\"RelBeneficiarioSeis\",\r\n                     \"value\":\"\"\r\n                  },\r\n                  { \r\n                     \"etiqueta\":\"RelBeneficiarioTres\",\r\n                     \"value\":\"\"\r\n                  },\r\n                  { \r\n                     \"etiqueta\":\"TipoAseguradoInv\",\r\n                     \"value\":\"Titular\"\r\n                  },\r\n                  { \r\n                     \"etiqueta\":\"RelacionParentesco\",\r\n                     \"value\":\"Asegurado\"\r\n                  },\r\n                  { \r\n                     \"etiqueta\":\"Sexo\",\r\n                     \"value\":\"F\"\r\n                  },\r\n                  { \r\n                     \"etiqueta\":\"FechaNacimiento\",\r\n                     \"value\":\"1990-04-13\"\r\n                  },\r\n                  { \r\n                     \"etiqueta\":\"FumadorCondicion\",\r\n                     \"value\":\"No Fumador\"\r\n                  },\r\n                  { \r\n                     \"etiqueta\":\"RelBeneficiarioUno\",\r\n                     \"value\":\"Conviviente\"\r\n                  },\r\n                  { \r\n                     \"etiqueta\":\"ParticipBenefUno\",\r\n                     \"value\":\"100\"\r\n                  },\r\n                  { \r\n                     \"etiqueta\":\"NombreBenefUno\",\r\n                     \"value\":\"ADEMAR MARTINEZ TINEO\"\r\n                  },\r\n                  { \r\n                     \"etiqueta\":\"IDUnicoBeneficiario1\",\r\n                     \"value\":\"22084203\"\r\n                  }\r\n               ],\r\n               \"coverageEntities\":[ \r\n                  { \r\n                     \"name\":\"Fallecimiento\",\r\n                     \"description\":\"Fallecimiento\",\r\n                     \"dynamicData\":[ \r\n                        { \r\n                           \"etiqueta\":\"COVSumaAsegurada\",\r\n                           \"value\":\"180000\"\r\n                        },\r\n                        { \r\n                           \"etiqueta\":\"COVPrimaBasica\",\r\n                           \"value\":\"2589.59\"\r\n                        },\r\n                        { \r\n                           \"etiqueta\":\"COVTasaBasica\",\r\n                           \"value\":\"14.3866\"\r\n                        }\r\n                     ]\r\n                  }\r\n               ]\r\n            }\r\n         ]\r\n      }\r\n   ],\r\n   \"participationEntities\":[ \r\n      { \r\n         \"rol\":\"Contratantes\",\r\n         \"percentage\":100,\r\n         \"codeIdentifier\":\"16255192\",\r\n         \"dynamicData\":[ \r\n            { \r\n               \"etiqueta\":\"Porcentaje\",\r\n               \"value\":\"100\"\r\n            }\r\n         ]\r\n      },\r\n      { \r\n         \"rol\":\"Asesor\",\r\n         \"percentage\":100,\r\n         \"codeIdentifier\":\"19583241\",\r\n         \"dynamicData\":[ \r\n            { \r\n               \"etiqueta\":\"Porcentaje\",\r\n               \"value\":\"100\"\r\n            }\r\n         ]\r\n      },\r\n      { \r\n         \"rol\":\"Pagador\",\r\n         \"percentage\":100,\r\n         \"codeIdentifier\":\"33132557\",\r\n         \"thirdPartyPaymentModeEntity\":{ \r\n            \"paymentMode\":\"Directo\"\r\n         },\r\n         \"dynamicData\":[ \r\n            { \r\n               \"etiqueta\":\"Porcentaje\",\r\n               \"value\":\"100\"\r\n            }\r\n         ]\r\n      }\r\n   ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://172.23.2.40:9082/ws/rest/policies/emite",
+					"protocol": "http",
+					"host": [
+						"172",
+						"23",
+						"2",
+						"40"
+					],
+					"port": "9082",
+					"path": [
+						"ws",
+						"rest",
+						"policies",
+						"emite"
+					]
+				},
+				"description": "AERIMACVI-275"
+			},
+			"response": []
+		},
+		{
+			"name": "Cotizacion UAT",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "197ab4c8-98b9-4e54-b6c8-e60b1107376b",
+						"exec": [
+							"const echoPostRequest = {",
+							"  url: 'http://172.23.2.40:9082/ws/rest/login',",
+							"  method: 'POST',",
+							"  header: 'Content-Type:application/vdn.acsele.api.v1+json',",
+							"  body: {",
+							"    mode: 'application/json',",
+							"    raw: JSON.stringify(",
+							"        {",
+							"        \tuserName:'omolina',",
+							"        \tpassword:'omolina',",
+							"        \tinstance:'RIMAC',",
+							"        \tcountry:8",
+							"        })",
+							"  }",
+							"};",
+							"",
+							"pm.sendRequest(echoPostRequest, function (err, res) {",
+							"    var token = res.headers;",
+							"    console.log(res.headers instanceof Array)",
+							"",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"description": "quotations/create   y  policies/emite",
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/vdn.acsele.api.v1+json;charset=UTF-8"
+					},
+					{
+						"key": "Cookie",
+						"type": "text",
+						"value": "token={{token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \"quotationNumber\":\"61575863UAT_001\",\r\n   \"initialDate\":\"2019-10-18\",\r\n   \"finishDate\":\"2069-10-18\",\r\n   \"validity\":0,\r\n   \"productEntity\":{\r\n      \"description\":\"FlexiVida\"\r\n   },\r\n   \"financialPlansEntity\":{\r\n      \"description\":\"PagoUnico\"\r\n   },\r\n   \"currencyEntity\":{\r\n      \"isoCode\":\"USD\",\r\n      \"description\":\"Dolar\"\r\n   },\r\n   \"eventEntity\":{\r\n      \"description\":\"Cotizar\",\r\n      \"dynamicData\":[\r\n         {\r\n            \"etiqueta\":\"FechaMovimiento\",\r\n            \"value\":\"2019-10-18\"\r\n         },\r\n         {\r\n            \"etiqueta\":\"FechaEvento\",\r\n            \"value\":\"2019-10-18\"\r\n         }\r\n      ]\r\n   },\r\n   \"dynamicData\":[\r\n      {\r\n         \"etiqueta\":\"NumeroHijosInv\",\r\n         \"value\":\"0\"\r\n      },\r\n      {\r\n         \"etiqueta\":\"NumeroPadres\",\r\n         \"value\":\"0\"\r\n      },\r\n      {\r\n         \"etiqueta\":\"TipoRenta\",\r\n         \"value\":\"RentasBajas\"\r\n      },\r\n      {\r\n         \"etiqueta\":\"TipoRiesgo\",\r\n         \"value\":\"Preferente\"\r\n      },\r\n      {\r\n         \"etiqueta\":\"FechaEmision\",\r\n         \"value\":\"2019-10-18\"\r\n      },\r\n      {\r\n         \"etiqueta\":\"Moneda\",\r\n         \"value\":\"Dolar\"\r\n      },\r\n      {\r\n         \"etiqueta\":\"DuracionPoliza\",\r\n         \"value\":\"50\"\r\n      },\r\n      {\r\n         \"etiqueta\":\"DuracionVFPDT\",\r\n         \"value\":\"50\"\r\n      },\r\n      {\r\n         \"etiqueta\":\"DuracionInversionSC\",\r\n         \"value\":\"20\"\r\n      },\r\n      {\r\n         \"etiqueta\":\"SumaAsegurada\",\r\n         \"value\":\"180000\"\r\n      },\r\n      {\r\n         \"etiqueta\":\"FrecuenciaPagoInv\",\r\n         \"value\":\"Anual\"\r\n      }\r\n   ],\r\n   \"riskUnitEntities\":[\r\n      {\r\n         \"riskUnitNumber\":\"1\",\r\n         \"insuranceObjectEntities\":[\r\n            {\r\n               \"insuranceObjectNumber\":\"1\",\r\n               \"coverageEntities\":[\r\n                  {\r\n                     \"name\":\"Fallecimiento\",\r\n                     \"description\":\"Fallecimiento\",\r\n                     \"dynamicData\":[\r\n                        {\r\n                           \"etiqueta\":\"COVSumaAsegurada\",\r\n                           \"value\":\"180000\"\r\n                        },\r\n                        {\r\n                           \"etiqueta\":\"COVPrimaBasica\",\r\n                           \"value\":\"2589.59\"\r\n                        },\r\n                        {\r\n                           \"etiqueta\":\"COVTasaBasica\",\r\n                           \"value\":\"14.3866\"\r\n                        }\r\n                     ]\r\n                  }\r\n               ],\r\n               \"dynamicData\":[\r\n                  {\r\n                     \"etiqueta\":\"RelBeneficiarioCinco\",\r\n                     \"value\":\"Titular\"\r\n                  },\r\n                  {\r\n                     \"etiqueta\":\"RelBeneficiarioDos\",\r\n                     \"value\":\"Titular\"\r\n                  },\r\n                  {\r\n                     \"etiqueta\":\"RelBeneficiarioCuatro\",\r\n                     \"value\":\"Titular\"\r\n                  },\r\n                  {\r\n                     \"etiqueta\":\"RelBeneficiarioNueve\",\r\n                     \"value\":\"Titular\"\r\n                  },\r\n                  {\r\n                     \"etiqueta\":\"DesPreferente\",\r\n                     \"value\":\"NO\"\r\n                  },\r\n                  {\r\n                     \"etiqueta\":\"RelBeneficiarioDiez\",\r\n                     \"value\":\"Titular\"\r\n                  },\r\n                  {\r\n                     \"etiqueta\":\"RelBeneficiarioSiete\",\r\n                     \"value\":\"Titular\"\r\n                  },\r\n                  {\r\n                     \"etiqueta\":\"RelBeneficiarioOcho\",\r\n                     \"value\":\"Titular\"\r\n                  },\r\n                  {\r\n                     \"etiqueta\":\"RelBeneficiarioSeis\",\r\n                     \"value\":\"Titular\"\r\n                  },\r\n                  {\r\n                     \"etiqueta\":\"RelBeneficiarioTres\",\r\n                     \"value\":\"Titular\"\r\n                  },\r\n                  {\r\n                     \"etiqueta\":\"TipoAseguradoInv\",\r\n                     \"value\":\"Titular\"\r\n                  },\r\n                  {\r\n                     \"etiqueta\":\"RelacionParentesco\",\r\n                     \"value\":\"Asegurado\"\r\n                  },\r\n                  {\r\n                     \"etiqueta\":\"Sexo\",\r\n                     \"value\":\"F\"\r\n                  },\r\n                  {\r\n                     \"etiqueta\":\"FechaNacimiento\",\r\n                     \"value\":\"1990-04-13\"\r\n                  },\r\n                  {\r\n                     \"etiqueta\":\"FumadorCondicion\"\r\n                  }\r\n               ]\r\n            }\r\n         ],\r\n         \"plansEntity\":{\r\n            \"description\":\"PlanFuturoProtegido\"\r\n         }\r\n      }\r\n   ]\r\n}\r\n"
+				},
+				"url": {
+					"raw": "http://172.23.2.40:9082/ws/rest/quotations/create",
+					"protocol": "http",
+					"host": [
+						"172",
+						"23",
+						"2",
+						"40"
+					],
+					"port": "9082",
+					"path": [
+						"ws",
+						"rest",
+						"quotations",
+						"create"
+					]
+				},
+				"description": "AERIMACVI-275"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

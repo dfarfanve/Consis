@@ -1,0 +1,291 @@
+{
+	"info": {
+		"_postman_id": "fb9f8682-3842-479b-9944-d739487011cc",
+		"name": "CCM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "DESA Registrar Pedido CCM",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"origen\": {\r\n    \"sistema\": \"Flexivida\",\r\n    \"ambiente\": \"TEST\",\r\n    \"proceso\": \"FLEXIVIDA_001\",\r\n    \"subproceso\": \"F-001-01\",\r\n    \"fechadeEnvio\": \"11/01/2018 13:40:02\",\r\n    \"usuario\": \"RGARCIAM\",\r\n    \"identificador\": [\r\n      \"acuerdo123\"\r\n    ]\r\n  },\r\n  \"cabecera\": {\r\n    \"detallePDF\": {\r\n      \"indPDF\": \"S\",\r\n      \"codigoPlantilla\": \"FLEXIVIDA_001\",\r\n      \"indVisualizacion\": \"N\",\r\n      \"nombreDocumento\": \"Documento_FLEXIVIDAPRUEBA2\",\r\n      \"indGuardado\": \"N\"\r\n    },\r\n    \"detalleTXT\": {\r\n      \"indTXT\": \"N\",\r\n      \"codigoPlantilla\": \"FLEXIVIDA_001\",\r\n      \"nombreDocumento\": \"doc2\",\r\n      \"indGuardado\": \"N\"\r\n    },\r\n    \"detalleHTML\": {\r\n      \"indHTML\": \"N\",\r\n      \"codigoPlantilla\": \"FLEXIVIDA_001\",\r\n      \"nombreDocumento\": \"doc\",\r\n      \"indGuardado\": \"N\"\r\n    },\r\n    \"detalleCorreo\": {\r\n      \"indCorreo\": \"N\",\r\n      \"indAdjuntarPDF\": \"N\",\r\n      \"indAdjuntarTXT\": \"N\",\r\n      \"de\": \"nbr_recepcion_automatica_sitrimac.com.pe\",\r\n      \"aliasDe\": \"Rimac - Envío Slip\",\r\n      \"para\": [\r\n        \"correo1@gmail.com\",\r\n        \"correo2@gmail.com\"\r\n      ],\r\n      \"conCopia\": [\r\n        \"correo1@gmail.com\",\r\n        \"correo2@gmail.com\"\r\n      ],\r\n      \"conCopiaOculta\": [\r\n        \"correo1@gmail.com\",\r\n        \"correo2@gmail.com\"\r\n      ],\r\n      \"asuntoPlantilla\": \"CM_SujetoNBR\",\r\n      \"asunto\": \"Asunto de prueba\",\r\n      \"adjuntosadicionales\": [\r\n        {\r\n          \"nombreArchivo\": \"archivo1\",\r\n          \"tipoAdjunto\": \"Url\",\r\n          \"rutaURLArchivo\": \"http://buckets-amazon/archivo/archivo1.zip\"\r\n        },\r\n        {\r\n          \"nombreArchivo\": \"archivo1\",\r\n          \"tipoAdjunto\": \"Url\",\r\n          \"rutaURLArchivo\": \"http://buckets-amazon/archivo/archivo1.txt\"\r\n        }\r\n      ]\r\n    },\r\n    \"detalleSMS\": {\r\n      \"indSMS\": \"N\",\r\n      \"dataSource\": \"DSSMSTH\",\r\n      \"destinatario\": [\r\n        \"99802138012\",\r\n        \"9832972342\"\r\n      ]\r\n    },\r\n    \"detalleTrazabilidadCorreo\": {\r\n      \"indTrazabilidad\": \"N\",\r\n      \"dataSource\": \"DSTRAZABILIDADBIZAGI\"\r\n    },\r\n    \"detalleServicioGenerico\": {\r\n      \"indServicioGenerico\": \"N\",\r\n      \"dataSource\": \"DSSERVICIOGENERICOBIZAGI\"\r\n    },\r\n\t\"detalleLocal\": {\r\n\t\t\"indPDF\":{\r\n\t\t\t\"indLocalPDF\":\"S\",\r\n\t\t\t\"rutaDestinoPDF\":\"\\\\\"\r\n\t\t},\r\n\t\t\"indTXT\":{\r\n\t\t\t\"indLocalTXT\":\"N\",\r\n\t\t\t\"rutaDestinoTXT\":\"TXT/\"\r\n\t\t},\r\n\t\t\"indHTML\":{\r\n\t\t\t\"indLocalHTML\":\"N\",\r\n\t\t\t\"rutaDestinoHTML\":\"HTML/\"\r\n\t\t}\r\n\t},\r\n    \"detalleS3\": {\r\n      \"indPDF\": {\r\n        \"indS3PDF\": \"S\",\r\n        \"metadata\": {\r\n        },\r\n        \"rutaURLDestinoPDF\": \"FlexiVida/Documentos\"\r\n      },\r\n      \"indTXT\": {\r\n        \"indS3TXT\": \"N\",\r\n        \"metadata\": {\r\n          \r\n        },\r\n        \"rutaURLDestinoTXT\": \"http://buckets-amazon/PDF/siniestrosvida/\"\r\n      },\r\n      \"indHTML\": {\r\n        \"indS3HTML\": \"N\",\r\n        \"metadata\": {\r\n          \r\n        },\r\n        \"rutaURLDestinoHTML\": \"http://buckets-amazon/PDF/siniestrosvida/\"\r\n      }\r\n    },\r\n    \"detalleFilenet\": {\r\n      \"repositoryId\": \"UATOS\",\r\n      \"indPDF\": {\r\n        \"indFilenetPDF\": \"N\",\r\n        \"propiedades\": {\r\n          \"cmisObjectTypeId\": \"VehiclePolicySupportingDocument\",\r\n          \"cmisName\": \"prueba reversa\",\r\n          \"ECMID\": \"NG17071900346\",\r\n          \"Username\": \"NBRSAS\",\r\n          \"BatchID\": \"\",\r\n          \"DocumentType\": \"DV_10\",\r\n          \"ExistingFolder\": \"1\",\r\n          \"GRDocumentType\": \"SD_06\"\r\n        },\r\n        \"contentStream\": {\r\n          \"length\": \"4\",\r\n          \"mimeType\": \"text/plain\",\r\n          \"filename\": \"pruebaFlotasPoliza 1.0 (2).pdf\",\r\n          \"stream\": \"YWFhYQ==\"\r\n        }\r\n      },\r\n      \"indTXT\": {\r\n        \"indFilenetTXT\": \"N\",\r\n        \"propiedades\": {\r\n          \"cmisObjectTypeId\": \"VehiclePolicySupportingDocument\",\r\n          \"cmisName\": \"prueba reversa\",\r\n          \"ECMID\": \"NG17071900346\",\r\n          \"Username\": \"NBRSAS\",\r\n          \"BatchID\": \"\",\r\n          \"DocumentType\": \"DV_10\",\r\n          \"ExistingFolder\": \"1\",\r\n          \"GRDocumentType\": \"SD_06\"\r\n        },\r\n        \"contentStream\": {\r\n          \"length\": \"4\",\r\n          \"mimeType\": \"text/plain\",\r\n          \"filename\": \"pruebaFlotasPoliza 1.0 (2).txt\",\r\n          \"stream\": \"YWFhYQ==\"\r\n        }\r\n      },\r\n      \"indHTML\": {\r\n        \"indFilenetHTML\": \"N\",\r\n        \"propiedades\": {\r\n          \"cmisObjectTypeId\": \"VehiclePolicySupportingDocument\",\r\n          \"cmisName\": \"prueba reversa\",\r\n          \"ECMID\": \"NG17071900346\",\r\n          \"Username\": \"NBRSAS\",\r\n          \"BatchID\": \"\",\r\n          \"DocumentType\": \"DV_10\",\r\n          \"ExistingFolder\": \"1\",\r\n          \"GRDocumentType\": \"SD_06\"\r\n        },\r\n        \"contentStream\": {\r\n          \"length\": \"4\",\r\n          \"mimeType\": \"text/plain\",\r\n          \"filename\": \"pruebaFlotasPoliza 1.0 (2).txt\",\r\n          \"stream\": \"YWFhYQ==\"\r\n        }\r\n      }\r\n    }\r\n  },\r\n  \"jsonData\": {\r\n    \"nombreproducto\": \"FlexiVidaaaa\",\r\n    \"numeropoliza\": \"6125478\",\r\n    \"codigosbs\": \"VI0507100317\",\r\n    \"planseguro\": \"FlexiVida\",\r\n    \"fechainiciovigencia\": \"04-03-2019\",\r\n    \"fechafinvigencia\": \"03-03-2049\",\r\n    \"plazopoliza\": \"30\",\r\n    \"periodopagoprimas\": \"20\",\r\n    \"monedapoliza\": \"Dolar\",\r\n    \"promotorseguros\": \"GARCÍA RAMIREZ, LUIS ALBERTO\",\r\n    \"asegurados\": [\r\n      {\r\n        \"parentesco\": \"Asegurado\",\r\n        \"nombre\": \"AMARO JIMENEZ, DANNY RUBEN\",\r\n        \"dni\": \"43256987\",\r\n        \"fechanacimiento\": \"02-11-1986\",\r\n        \"sexo\": \"Masculino\",\r\n        \"direccion\": \"AV.LOS INCAS 735 - LIMA - LIMA - COMAS\",\r\n        \"correo\": \"damaro@gmail.com\"\r\n      },\r\n      {\r\n        \"parentesco\": \"Conyuge\",\r\n        \"nombre\": \"VELIZ FERNANDEZ, PATRICIA\",\r\n        \"dni\": \"44256987\",\r\n        \"fechanacimiento\": \"16-11-1986\",\r\n        \"sexo\": \"Femenino\",\r\n        \"direccion\": \"AV.LOS INCAS 735 - LIMA - LIMA - COMAS\",\r\n        \"correo\": \"patriciaveliz@gmail.com\"\r\n      },\r\n      {\r\n        \"parentesco\": \"Hijo\",\r\n        \"nombre\": \"AMARO VELIZ, LUIS MANUEL\",\r\n        \"dni\": \"85124785\",\r\n        \"fechanacimiento\": \"02-11-2006\",\r\n        \"sexo\": \"Masculino\",\r\n        \"direccion\": \"AV.LOS INCAS 735 - LIMA - LIMA - COMAS\",\r\n        \"correo\": \"luismanuel@gmail.com\"\r\n      },\r\n      {\r\n        \"parentesco\": \"Hijo\",\r\n        \"nombre\": \"AMARO VELIZ, SHEYLA ANDREA\",\r\n        \"dni\": \"85124786\",\r\n        \"fechanacimiento\": \"12-11-2009\",\r\n        \"sexo\": \"Femenino\",\r\n        \"direccion\": \"AV.LOS INCAS 735 - LIMA - LIMA - COMAS\",\r\n        \"correo\": \"sheylaandrea@gmail.com\"\r\n      },\r\n      {\r\n        \"parentesco\": \"Padre\",\r\n        \"nombre\": \"AMARO ROJAS, RUBEN\",\r\n        \"dni\": \"35124785\",\r\n        \"fechanacimiento\": \"12-11-1965\",\r\n        \"sexo\": \"Masculino\",\r\n        \"direccion\": \"AV.LOS PATRIOTAS 735 - LIMA - LIMA - SAN MIGUEL\",\r\n        \"correo\": \"rubenamaro@gmail.com\"\r\n      },\r\n      {\r\n        \"parentesco\": \"Madre\",\r\n        \"nombre\": \"VELIZ VELIZ, PILAR\",\r\n        \"dni\": \"35124786\",\r\n        \"fechanacimiento\": \"17-11-1965\",\r\n        \"sexo\": \"Femenino\",\r\n        \"direccion\": \"AV.LOS PATRIOTAS 735 - LIMA - LIMA - SAN MIGUEL\",\r\n        \"correo\": \"pilarveliz@gmail.com\"\r\n      }\r\n    ],\r\n    \"beneficiarios\": [\r\n      {\r\n        \"nombre\": \"VELIZ FERNANDEZ, PATRICIA\",\r\n        \"parentesco\": \"Conyuge\",\r\n        \"participacion\": \"50\"\r\n      },\r\n      {\r\n        \"nombre\": \"AMARO VELIZ, LUIS MANUEL\",\r\n        \"parentesco\": \"Hijo\",\r\n        \"participacion\": \"50\"\r\n      }\r\n    ],\r\n    \"coberturas\": [\r\n      {\r\n        \"nombre\": \"Fallecimiento\",\r\n        \"tipo\": \"Principal\",\r\n        \"grupoparentesco\": \"TITULAR\",\r\n        \"sumaasegurada\": 100000.00,\r\n        \"primaanual\": 1000.00\r\n      },\r\n      {\r\n        \"nombre\": \"Asistencias de Sepelio\",\r\n        \"tipo\": \"Adicional\",\r\n        \"grupoparentesco\": \"TITULAR\",\r\n        \"sumaasegurada\": 3000.00,\r\n        \"primaanual\": 200.00\r\n      },\r\n      {\r\n        \"nombre\": \"Fallecimiento Accidental\",\r\n        \"tipo\": \"Adicional\",\r\n        \"grupoparentesco\": \"CÓNYUGE\",\r\n        \"sumaasegurada\": 50000.00,\r\n        \"primaanual\": 400.00\r\n      },\r\n      {\r\n        \"nombre\": \"Apoyo por Hospitalización por Accidente\",\r\n        \"tipo\": \"Adicional\",\r\n        \"grupoparentesco\": \"HIJOS\",\r\n        \"sumaasegurada\": 3000.00,\r\n        \"primaanual\": 100.00\r\n      },\r\n      {\r\n        \"nombre\": \"Asistencia de Sepelio para Padres\",\r\n        \"tipo\": \"Adicional\",\r\n        \"grupoparentesco\": \"PADRES\",\r\n        \"sumaasegurada\": 3000.00,\r\n        \"primaanual\": 300.00\r\n      }\r\n    ],\r\n    \"primabasicaanual\": 1800.00,\r\n    \"primaahorrofrec\": 100.00,\r\n    \"primatotalfrecuencia\": 250.00,\r\n    \"tipocambio\": \"3.33\",\r\n    \"frecuenciapago\": \"Mensual\",\r\n    \"primanetaperiodo\": 2500.00,\r\n    \"cargosseguro\": [\r\n      {\r\n        \"anioinicio\": \"1\",\r\n        \"porcenctabasica\": \"-\",\r\n        \"cargofijo\": \"-\",\r\n        \"porcenprimafall\": \"65.00\"\r\n      },\r\n      {\r\n        \"anioinicio\": \"2\",\r\n        \"porcenctabasica\": \"-\",\r\n        \"cargofijo\": \"-\",\r\n        \"porcenprimafall\": \"43.00\"\r\n      },\r\n      {\r\n        \"anioinicio\": \"3\",\r\n        \"porcenctabasica\": \"-\",\r\n        \"cargofijo\": \"-\",\r\n        \"porcenprimafall\": \"26.00\"\r\n      },\r\n      {\r\n        \"anioinicio\": \"6\",\r\n        \"porcenctabasica\": \"-\",\r\n        \"cargofijo\": \"-\",\r\n        \"porcenprimafall\": \"21.00\"\r\n      },\r\n      {\r\n        \"anioinicio\": \"11\",\r\n        \"porcenctabasica\": \"-\",\r\n        \"cargofijo\": \"-\",\r\n        \"porcenprimafall\": \"17.00\"\r\n      },\r\n      {\r\n        \"anioinicio\": \"20\",\r\n        \"porcenctabasica\": \"-\",\r\n        \"cargofijo\": \"-\",\r\n        \"porcenprimafall\": \"-\"\r\n      },\r\n      {\r\n        \"anioinicio\": \"1\",\r\n        \"porcenctabasica\": \"2.50\",\r\n        \"cargofijo\": \"-\",\r\n        \"porcenprimafall\": \"-\"\r\n      },\r\n      {\r\n        \"anioinicio\": \"6\",\r\n        \"porcenctabasica\": \"0.75\",\r\n        \"cargofijo\": \"-\",\r\n        \"porcenprimafall\": \"-\"\r\n      }\r\n    ],\r\n    \"cargosinversion\": [\r\n      {\r\n        \"anioinicio\": \"1\",\r\n        \"porcenctaahorro\": \"2.50\",\r\n        \"cargofijo\": \"-\",\r\n        \"porcenprimaahorro\": \"-\"\r\n      },\r\n      {\r\n        \"anioinicio\": \"2\",\r\n        \"porcenctaahorro\": \"\",\r\n        \"cargofijo\": \"-\",\r\n        \"porcenprimaahorro\": \"0.00\"\r\n      }\r\n    ],\r\n    \"cargosrescate\": [\r\n      {\r\n        \"anioinicio\": \"1\",\r\n        \"porcenprimafall\": \"110.00\"\r\n      },\r\n      {\r\n        \"anioinicio\": \"2\",\r\n        \"porcenprimafall\": \"110.00\"\r\n      },\r\n      {\r\n        \"anioinicio\": \"3\",\r\n        \"porcenprimafall\": \"65.00\"\r\n      },\r\n      {\r\n        \"anioinicio\": \"4\",\r\n        \"porcenprimafall\": \"55.00\"\r\n      },\r\n      {\r\n        \"anioinicio\": \"5\",\r\n        \"porcenprimafall\": \"45.00\"\r\n      },\r\n      {\r\n        \"anioinicio\": \"6\",\r\n        \"porcenprimafall\": \"35.00\"\r\n      },\r\n      {\r\n        \"anioinicio\": \"7\",\r\n        \"porcenprimafall\": \"27.00\"\r\n      },\r\n      {\r\n        \"anioinicio\": \"8\",\r\n        \"porcenprimafall\": \"23.00\"\r\n      },\r\n      {\r\n        \"anioinicio\": \"9\",\r\n        \"porcenprimafall\": \"10.00\"\r\n      },\r\n      {\r\n        \"anioinicio\": \"11\",\r\n        \"porcenprimafall\": \"0.00\"\r\n      }\r\n    ],\r\n    \"tasascostoscobertura\": [\r\n      {\r\n        \"edad\": \"18\",\r\n        \"tasamensual\": \"0.078907\"\r\n      },\r\n      {\r\n        \"edad\": \"19\",\r\n        \"tasamensual\": \"0.0819\"\r\n      },\r\n      {\r\n        \"edad\": \"20\",\r\n        \"tasamensual\": \"0.082845\"\r\n      },\r\n      {\r\n        \"edad\": \"21\",\r\n        \"tasamensual\": \"0.074813\"\r\n      },\r\n      {\r\n        \"edad\": \"22\",\r\n        \"tasamensual\": \"0.074025\"\r\n      },\r\n      {\r\n        \"edad\": \"23\",\r\n        \"tasamensual\": \"0.07245\"\r\n      },\r\n      {\r\n        \"edad\": \"24\",\r\n        \"tasamensual\": \"0.070875\"\r\n      },\r\n      {\r\n        \"edad\": \"25\",\r\n        \"tasamensual\": \"0.068906\"\r\n      },\r\n      {\r\n        \"edad\": \"26\",\r\n        \"tasamensual\": \"0.067725\"\r\n      },\r\n      {\r\n        \"edad\": \"27\",\r\n        \"tasamensual\": \"0.067331\"\r\n      },\r\n      {\r\n        \"edad\": \"28\",\r\n        \"tasamensual\": \"0.066937\"\r\n      },\r\n      {\r\n        \"edad\": \"29\",\r\n        \"tasamensual\": \"0.067725\"\r\n      },\r\n      {\r\n        \"edad\": \"30\",\r\n        \"tasamensual\": \"0.068906\"\r\n      },\r\n      {\r\n        \"edad\": \"31\",\r\n        \"tasamensual\": \"0.070875\"\r\n      },\r\n      {\r\n        \"edad\": \"32\",\r\n        \"tasamensual\": \"0.073631\"\r\n      },\r\n      {\r\n        \"edad\": \"33\",\r\n        \"tasamensual\": \"0.076466\"\r\n      },\r\n      {\r\n        \"edad\": \"34\",\r\n        \"tasamensual\": \"0.07938\"\r\n      },\r\n      {\r\n        \"edad\": \"35\",\r\n        \"tasamensual\": \"0.083317\"\r\n      },\r\n      {\r\n        \"edad\": \"36\",\r\n        \"tasamensual\": \"0.087334\"\r\n      },\r\n      {\r\n        \"edad\": \"37\",\r\n        \"tasamensual\": \"0.092689\"\r\n      },\r\n      {\r\n        \"edad\": \"38\",\r\n        \"tasamensual\": \"0.098674\"\r\n      },\r\n      {\r\n        \"edad\": \"39\",\r\n        \"tasamensual\": \"0.105525\"\r\n      },\r\n      {\r\n        \"edad\": \"40\",\r\n        \"tasamensual\": \"0.112927\"\r\n      },\r\n      {\r\n        \"edad\": \"41\",\r\n        \"tasamensual\": \"0.121826\"\r\n      },\r\n      {\r\n        \"edad\": \"42\",\r\n        \"tasamensual\": \"0.131434\"\r\n      },\r\n      {\r\n        \"edad\": \"43\",\r\n        \"tasamensual\": \"0.141041\"\r\n      },\r\n      {\r\n        \"edad\": \"44\",\r\n        \"tasamensual\": \"0.151436\"\r\n      },\r\n      {\r\n        \"edad\": \"45\",\r\n        \"tasamensual\": \"0.163721\"\r\n      },\r\n      {\r\n        \"edad\": \"46\",\r\n        \"tasamensual\": \"0.17703\"\r\n      },\r\n      {\r\n        \"edad\": \"47\",\r\n        \"tasamensual\": \"0.191363\"\r\n      },\r\n      {\r\n        \"edad\": \"48\",\r\n        \"tasamensual\": \"0.20664\"\r\n      },\r\n      {\r\n        \"edad\": \"49\",\r\n        \"tasamensual\": \"0.223886\"\r\n      },\r\n      {\r\n        \"edad\": \"50\",\r\n        \"tasamensual\": \"0.242156\"\r\n      },\r\n      {\r\n        \"edad\": \"51\",\r\n        \"tasamensual\": \"0.263891\"\r\n      },\r\n      {\r\n        \"edad\": \"52\",\r\n        \"tasamensual\": \"0.289013\"\r\n      },\r\n      {\r\n        \"edad\": \"53\",\r\n        \"tasamensual\": \"0.317126\"\r\n      },\r\n      {\r\n        \"edad\": \"54\",\r\n        \"tasamensual\": \"0.34965\"\r\n      },\r\n      {\r\n        \"edad\": \"55\",\r\n        \"tasamensual\": \"0.385718\"\r\n      },\r\n      {\r\n        \"edad\": \"56\",\r\n        \"tasamensual\": \"0.425644\"\r\n      },\r\n      {\r\n        \"edad\": \"57\",\r\n        \"tasamensual\": \"0.46809\"\r\n      },\r\n      {\r\n        \"edad\": \"58\",\r\n        \"tasamensual\": \"0.513922\"\r\n      },\r\n      {\r\n        \"edad\": \"59\",\r\n        \"tasamensual\": \"0.56574\"\r\n      },\r\n      {\r\n        \"edad\": \"60\",\r\n        \"tasamensual\": \"0.623385\"\r\n      },\r\n      {\r\n        \"edad\": \"61\",\r\n        \"tasamensual\": \"0.687566\"\r\n      },\r\n      {\r\n        \"edad\": \"62\",\r\n        \"tasamensual\": \"0.760567\"\r\n      },\r\n      {\r\n        \"edad\": \"63\",\r\n        \"tasamensual\": \"0.843885\"\r\n      },\r\n      {\r\n        \"edad\": \"64\",\r\n        \"tasamensual\": \"0.93807\"\r\n      },\r\n      {\r\n        \"edad\": \"65\",\r\n        \"tasamensual\": \"1.042177\"\r\n      },\r\n      {\r\n        \"edad\": \"66\",\r\n        \"tasamensual\": \"1.154081\"\r\n      },\r\n      {\r\n        \"edad\": \"67\",\r\n        \"tasamensual\": \"1.275435\"\r\n      },\r\n      {\r\n        \"edad\": \"68\",\r\n        \"tasamensual\": \"1.405687\"\r\n      },\r\n      {\r\n        \"edad\": \"69\",\r\n        \"tasamensual\": \"1.547674\"\r\n      },\r\n      {\r\n        \"edad\": \"70\",\r\n        \"tasamensual\": \"1.708009\"\r\n      },\r\n      {\r\n        \"edad\": \"71\",\r\n        \"tasamensual\": \"1.889449\"\r\n      }\r\n    ],\r\n    \"minvigenciamodifcapital\": \"-\",\r\n    \"periodominmodifcapital\": \"-\",\r\n    \"maxmodifaniocapital\": \"2\",\r\n    \"nummaxretirosanio\": \"6\",\r\n    \"nummaxretirosmes\": \"Ilimitado\",\r\n    \"montominretiro\": \"250.00\",\r\n    \"periodominvigencia\": \"30\",\r\n    \"cargoretiroporcentaje\": \"0.50\",\r\n    \"cargoretirofijo\": \"0.00\",\r\n    \"cargoretiromaximo\": \"100\",\r\n    \"minvigenciaprestamo\": \"12\",\r\n    \"maximobosicaprestamo\": \"80.00\",\r\n    \"interesprestamo\": \"0.00\",\r\n    \"limitemontodeposito\": \"500,000.00\",\r\n    \"limitevecesaniodeposito\": \"Ilimitado\",\r\n    \"limitevecesmesdeposito\": \"Ilimitado\",\r\n    \"cargosprimadeposito\": \"-\",\r\n    \"montomintransfer\": \"50.00\",\r\n    \"fondosinversion\": [\r\n      {\r\n        \"cuenta\": \"Cuenta Básica\",\r\n        \"fondoinversion\": \"Porfaolio Controlado\",\r\n        \"tiporentabilidad\": \"1.0\",\r\n        \"rentabportafolio\": \"2.0\",\r\n        \"rentabadicional\": \"4.0\",\r\n        \"distribucionprima\": 1.0\r\n      },\r\n      {\r\n        \"cuenta\": \"Cuenta de Ahorro\",\r\n        \"fondoinversion\": \"Porfaolio Dinámico\",\r\n        \"tiporentabilidad\": \"2.0\",\r\n        \"rentabportafolio\": \"6.0\",\r\n        \"rentabadicional\": \"7.0\",\r\n        \"distribucionprima\": 1.0\r\n      }\r\n    ],\r\n    \"minvigenciacambioinv\": \"12\",\r\n    \"nummaxcambioinv\": \"5\",\r\n    \"periodomincambioinv\": \"-\",\r\n    \"numenvioseecc\": \"2\",\r\n    \"periodominenvioseecc\": \"6\",\r\n    \"fechaemision\": \"28-03-2018\"\r\n  }\r\n}"
+				},
+				"url": {
+					"raw": "http://rsdcajboss01.rimac.com.pe:8080/wsOTCCM/registrar/pedido",
+					"protocol": "http",
+					"host": [
+						"rsdcajboss01",
+						"rimac",
+						"com",
+						"pe"
+					],
+					"port": "8080",
+					"path": [
+						"wsOTCCM",
+						"registrar",
+						"pedido"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DESA Consultar Pedido CCM",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"numOperacion\": \"90C8D8AD-833C-964F-A351-774E82C54103\"\n}"
+				},
+				"url": {
+					"raw": "http://rsdcajboss01.rimac.com.pe:8080/wsOTCCM/consultar/pedido",
+					"protocol": "http",
+					"host": [
+						"rsdcajboss01",
+						"rimac",
+						"com",
+						"pe"
+					],
+					"port": "8080",
+					"path": [
+						"wsOTCCM",
+						"consultar",
+						"pedido"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DESA JBOSS TOKEN",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"usuario\": \"asasa\",\n\t\"password\": \"asass\"\n}"
+				},
+				"url": {
+					"raw": "http://rsdcatjboss01.rimac.com.pe:8080/APIFlexivida/ccm-callback/token",
+					"protocol": "http",
+					"host": [
+						"rsdcatjboss01",
+						"rimac",
+						"com",
+						"pe"
+					],
+					"port": "8080",
+					"path": [
+						"APIFlexivida",
+						"ccm-callback",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DESA JBOSS CALLBACK",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "1212",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"origen\":{\r\n\t\t\"sistema\":\"Bizagi\",\r\n\t\t\"ambiente\" :\"TEST\",\r\n\t\t\"proceso\":\"B-001\", \r\n\t\t\"subproceso\":\"B-001-01\",\r\n\t\t\"fechadeEnvio\": \"11/01/2018 13:40:02\",\r\n\t\t\"usuario\": \"RGARCIAM\",\r\n\t\t\"identificador\": [\"32557391\",\"ECMDID001\",\"21380249832409324\"] \r\n\t},\r\n\t\"numOperacion\": \"90C8D8AD-833C-964F-A351-774E82C54103\",\r\n\t\"estado\": \"\",\r\n\t\"jsonRespuesta\" : {\r\n\t\t\"detallePDF\" : {\r\n\t\t\t\"indPDF\" : \"S/N\",\r\n\t\t\t\"indExito\" : \"S/N\",\r\n\t\t\t\"codEstado\" : \"0/#\",\r\n\t\t\t\"msgEstado\" : \"OK\"\r\n\t\t},\r\n\t\t\"detalleTXT\" : {\r\n\t\t\t\"indTXT\" : \"S/N\",\r\n\t\t\t\"archivo\":\"ruta local + fileName\",\r\n\t\t\t\"indExito\" : \"S/N\",\r\n\t\t\t\"codEstado\" : \"0/#\",\r\n\t\t\t\"msgEstado\" : \"OK\"\r\n\t\t},\t\t\r\n\t\t\"detalleHTML\" : {\r\n\t\t\t\"indHTML\" : \"S/N\",\r\n\t\t\t\"archivo\":\"ruta local + fileName\",\r\n\t\t\t\"indExito\" : \"S/N\", \r\n\t\t\t\"codEstado\" : \"0/#\",\r\n\t\t\t\"msgEstado\" : \"OK\"\r\n\t\t},\r\n\t\t\"envioSMS\" : [{\r\n\t\t\t\"indSMS\" : \"S/N\",\r\n\t\t\t\"numeroRespuesta\" : [\r\n\t\t\t\t{\"numero\" :\"99802138012\", \"archivo\":\"ruta local + fileName\",\"indExito\" : \"S/N\", \"codEstado\" : \"0/#\",\"msgEstado\" : \"OK\", \"valorRetorno\" : \"\" },\r\n\t\t\t\t{\"numero\" :\"9832972342\",  \"archivo\":\"ruta local + fileName\",\"indExito\" : \"S/N\", \"codEstado\" : \"0/#\",\"msgEstado\" : \"OK\", \"valorRetorno\" : \"\" }\r\n\t\t\t]\r\n\t\t}],\r\n\t\t\"detalleTrazabilidad\" : {\r\n\t\t\t\"indTrazabilidad\" : \"S/N\",\r\n\t\t\t\"indExito\" : \"S/N\", \r\n\t\t\t\"codEstado\" : \"0/#\", \r\n\t\t\t\"msgEstado\" : \"OK\",\r\n\t\t\t\"valorRetorno\" : \"\" \r\n\t\t},\r\n\t\t\"detalleServicio\" : {\r\n\t\t\t\"indServicio\" : \"S/N\",\r\n\t\t\t\"indExito\" : \"S/N\", \r\n\t\t\t\"codEstado\" : \"0/#\",\r\n\t\t\t\"msgEstado\" : \"OK\",\r\n\t\t\t\"valorRetorno\" : \"\"\r\n\t\t},\r\n\t\t\"almacenamientoS3\": {\r\n            \"indPDF\": {\r\n                \"indS3PDF\": \"S\",\r\n                \"indExito\": \"S\",\r\n                \"codEstado\": \"0\",\r\n                \"msgEstado\": \"Documento Subido a S3\",\r\n                \"rutaURLDestinoPDF\": \"https://ue1stgtestas3prv001.s3.amazonaws.com/SiniestrosVida/Documentos/PDF/2019/04/03/prueba2.pdf\"\r\n            },\r\n            \"indTXT\": {\r\n                \"indS3TXT\": \"N\",\r\n                \"indExito\": null,\r\n                \"codEstado\": null,\r\n                \"msgEstado\": null,\r\n                \"rutaURLDestinoTXT\": null\r\n            },\r\n            \"indHTML\": {\r\n                \"indS3HTML\": \"N\",\r\n                \"indExito\": null,\r\n                \"codEstado\": null,\r\n                \"msgEstado\": null,\r\n                \"rutaURLDestinoHTML\": null\r\n            }\r\n        },\r\n\t\t\"almacenamientoLocal\": {\r\n            \"indPDF\": {\r\n                \"indLocalPDF\": \"S\",\r\n                \"indExito\": \"S\",\r\n                \"codEstado\": \"0\",\r\n                \"msgEstado\": \"Documento Subido a storage local\",\r\n                \"rutaDestinoPDF\": \"\\\\\\\\172.26.40.142\\\\Compartido\\\\Disparador\\\\prueba.pdf\"\r\n            },\r\n            \"indTXT\": {\r\n                \"indLocalTXT\": \"N\",\r\n                \"indExito\": null,\r\n                \"codEstado\": null,\r\n                \"msgEstado\": null,\r\n                \"rutaDestinoTXT\": null\r\n            },\r\n            \"indHTML\": {\r\n                \"indLocalHTML\": \"N\",\r\n                \"indExito\": null,\r\n                \"codEstado\": null,\r\n                \"msgEstado\": null,\r\n                \"rutaDestinoHTML\": null\r\n            }\r\n        },\r\n\t\t\"almacenamientoFilenet\" : {\r\n\t\t\t\"indPDF\" :{\r\n\t\t\t\t\"indFilenetPDF\" : \"S/N\",\r\n\t\t\t\t\"indExito\" : \"S/N\", \r\n\t\t\t\t\"codEstado\" : \"0/#\", \r\n\t\t\t\t\"msgEstado\" : \"OK\",\r\n\t\t\t\t\"objectId\" : \"sadisadmlsldjsd?kds\"\r\n\t\t\t},\r\n\t\t\t\"indTXT\" :{\r\n\t\t\t\t\"indFilenetTXT\" : \"S/N\",\r\n\t\t\t\t\"indExito\" : \"S/N\",\r\n\t\t\t\t\"codEstado\" : \"0/#\",\r\n\t\t\t\t\"msgEstado\" : \"OK\",\r\n\t\t\t\t\"objectId\" : \"sadisadmlsldjsd?kds\"\r\n\t\t\t},\r\n\t\t\t\"indHTML\" :{\r\n\t\t\t\t\"indFilenetHTML\" : \"S/N\",\r\n\t\t\t\t\"indExito\" : \"S/N\",\r\n\t\t\t\t\"codEstado\" : \"0\",\r\n\t\t\t\t\"msgEstado\" : \"OK\",\r\n\t\t\t\t\"objectId\" : \"sadisadmlsldjsd?kds\"\r\n\t\t\t}\r\n\t\t}\r\n\t}\r\n}"
+				},
+				"url": {
+					"raw": "http://rsdcatjboss01.rimac.com.pe:8080/APIFlexivida/ccm-callback/",
+					"protocol": "http",
+					"host": [
+						"rsdcatjboss01",
+						"rimac",
+						"com",
+						"pe"
+					],
+					"port": "8080",
+					"path": [
+						"APIFlexivida",
+						"ccm-callback",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CCM Servicio de impresion **",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"origen\": {\r\n    \"sistema\":\"Flexivida\",\r\n    \"ambiente\": \"TEST\",\r\n    \"proceso\": \"FLEXIVIDA_001\",\r\n    \"subproceso\": \"B-001-01\",\r\n    \"fechadeEnvio\": \"20/02/2020 12:23:53\",\r\n    \"usuario\": \"system\",\r\n    \"identificador\": [\r\n\t\t\"1902209\"\r\n    ]\r\n  },\r\n  \"cabecera\": {\r\n    \"detallePDF\": {\r\n      \"indPDF\": \"S\",\r\n      \"codigoPlantilla\": \"FLEXIVIDA_001\",\r\n      \"indVisualizacion\": \"N\",\r\n    \"nombreDocumento\": \"VIDAINV-1902209-20200220\",\r\n      \"indGuardado\": \"N\"\r\n    },\r\n    \"detalleTXT\": {\r\n      \"indTXT\": \"N\",\r\n      \"codigoPlantilla\": \"FLEXIVIDA_001\",\r\n      \"nombreDocumento\": \"doc2\",\r\n      \"indGuardado\": \"N\"\r\n    },\r\n    \"detalleHTML\": {\r\n      \"indHTML\": \"N\",\r\n      \"codigoPlantilla\": \"FLEXIVIDA_001\",\r\n      \"nombreDocumento\": \"doc\",\r\n      \"indGuardado\": \"N\"\r\n    },\r\n    \"detalleCorreo\": {\r\n      \"indCorreo\": \"N\",\r\n      \"indAdjuntarPDF\": \"N\",\r\n      \"indAdjuntarTXT\": \"N\",\r\n      \"de\": \"nbr_recepcion_automatica_sitrimac.com.pe\",\r\n      \"aliasDe\": \"Rimac - EnvÃ¯Â¿Â½o Slip\",\r\n      \"para\": [\r\n        \"correo1@gmail.com\",\r\n        \"correo2@gmail.com\"\r\n      ],\r\n      \"conCopia\": [\r\n        \"correo1@gmail.com\",\r\n        \"correo2@gmail.com\"\r\n      ],\r\n      \"conCopiaOculta\": [\r\n        \"correo1@gmail.com\",\r\n        \"correo2@gmail.com\"\r\n      ],\r\n      \"asuntoPlantilla\": \"CM_SujetoNBR\",\r\n      \"asunto\": \"Asunto de prueba\",\r\n      \"adjuntosadicionales\": [\r\n        {\r\n          \"nombreArchivo\": \"archivo1\",\r\n          \"tipoAdjunto\": \"Url\",\r\n          \"rutaURLArchivo\": \"http://buckets-amazon/archivo/archivo1.zip\"\r\n        },\r\n        {\r\n          \"nombreArchivo\": \"archivo1\",\r\n          \"tipoAdjunto\": \"Url\",\r\n          \"rutaURLArchivo\": \"http://buckets-amazon/archivo/archivo1.txt\"\r\n        }\r\n      ]\r\n    },\r\n    \"detalleSMS\": {\r\n      \"indSMS\": \"N\",\r\n      \"dataSource\": \"DSSMSTH\",\r\n      \"destinatario\": [\r\n        \"99802138012\",\r\n        \"9832972342\"\r\n      ]\r\n    },\r\n    \"detalleTrazabilidadCorreo\": {\r\n      \"indTrazabilidad\": \"N\",\r\n      \"dataSource\": \"\"\r\n    },\r\n    \"detalleServicioGenerico\": {\r\n      \"indServicioGenerico\": \"S\",\r\n      \"dataSource\": \"DSSERVICIOGENERICOFLEXIVIDA\"\r\n    },\r\n    \"detalleLocal\": {\r\n        \"indPDF\":{\r\n            \"indLocalPDF\":\"S\",\r\n            \"rutaDestinoPDF\":\"\\\\\"\r\n        },\r\n        \"indTXT\":{\r\n            \"indLocalTXT\":\"N\",\r\n            \"rutaDestinoTXT\":\"TXT/\"\r\n        },\r\n        \"indHTML\":{\r\n            \"indLocalHTML\":\"N\",\r\n            \"rutaDestinoHTML\":\"HTML/\"\r\n        }\r\n    },\r\n    \"detalleS3\": {\r\n      \"indPDF\": {\r\n        \"indS3PDF\": \"S\",\r\n        \"metadata\": {},\r\n        \"rutaURLDestinoPDF\": \"http://buckets-amazon/PDF/siniestrosvida/probando.pdf\"\r\n      },\r\n      \"indTXT\": {\r\n        \"indS3TXT\": \"N\",\r\n        \"metadata\": {},\r\n        \"rutaURLDestinoTXT\": \"http://buckets-amazon/PDF/siniestrosvida/\"\r\n      },\r\n      \"indHTML\": {\r\n        \"indS3HTML\": \"N\",\r\n        \"metadata\": {},\r\n        \"rutaURLDestinoHTML\": \"http://buckets-amazon/PDF/siniestrosvida/\"\r\n      }\r\n    },\r\n    \"detalleFilenet\": {\r\n      \"repositoryId\": \"UATOS\",\r\n      \"indPDF\": {\r\n        \"indFilenetPDF\": \"N\",\r\n        \"propiedades\": {\r\n          \"cmisObjectTypeId\": \"VehiclePolicySupportingDocument\",\r\n          \"cmisName\": \"prueba reversa\",\r\n          \"ECMID\": \"NG17071900346\",\r\n          \"Username\": \"NBRSAS\",\r\n          \"BatchID\": \"\",\r\n          \"DocumentType\": \"DV_10\",\r\n          \"ExistingFolder\": \"1\",\r\n          \"GRDocumentType\": \"SD_06\"\r\n        },\r\n        \"contentStream\": {\r\n          \"length\": \"4\",\r\n          \"mimeType\": \"text/plain\",\r\n          \"filename\": \"pruebaFlotasPoliza 1.0 (2).pdf\",\r\n          \"stream\": \"YWFhYQ==\"\r\n        }\r\n      },\r\n      \"indTXT\": {\r\n        \"indFilenetTXT\": \"N\",\r\n        \"propiedades\": {\r\n          \"cmisObjectTypeId\": \"VehiclePolicySupportingDocument\",\r\n          \"cmisName\": \"prueba reversa\",\r\n          \"ECMID\": \"NG17071900346\",\r\n          \"Username\": \"NBRSAS\",\r\n          \"BatchID\": \"\",\r\n          \"DocumentType\": \"DV_10\",\r\n          \"ExistingFolder\": \"1\",\r\n          \"GRDocumentType\": \"SD_06\"\r\n        },\r\n        \"contentStream\": {\r\n\t\t\t\"length\": \"4\",\r\n\t\t\t\"mimeType\": \"text/plain\",\r\n\t\t\t\"filename\": \"pruebaFlotasPoliza 1.0 (2).txt\",\r\n\t\t\t\"stream\": \"YWFhYQ==\"\r\n\t\t}\r\n      },\r\n      \"indHTML\": {\r\n        \"indFilenetHTML\": \"N\",\r\n        \"propiedades\": {\r\n          \"cmisObjectTypeId\": \"VehiclePolicySupportingDocument\",\r\n          \"cmisName\": \"prueba reversa\",\r\n          \"ECMID\": \"NG17071900346\",\r\n          \"Username\": \"NBRSAS\",\r\n          \"BatchID\": \"\",\r\n          \"DocumentType\": \"DV_10\",\r\n          \"ExistingFolder\": \"1\",\r\n          \"GRDocumentType\": \"SD_06\"\r\n        },\r\n        \"contentStream\": {\r\n          \"length\": \"4\",\r\n          \"mimeType\": \"text/plain\",\r\n          \"filename\": \"pruebaFlotasPoliza 1.0 (2).txt\",\r\n          \"stream\": \"YWFhYQ==\"\r\n        }\r\n      }\r\n    }\r\n  },\r\n   \"jsonData\":\r\n  {\r\n\t\"nombreproducto\": \"Nuevo VFP\",\r\n\t\"numeropoliza\": \"1902209\",\r\n\t\"codigosbs\": \"VI0507100317\",\r\n\t\"planseguro\": \"Nuevo VFP\",\r\n\t\"fechainiciovigencia\": \"17-02-2020\",\r\n\t\"fechafinvigencia\": \"17-02-2030\",\r\n\t\"plazopoliza\": \"10\",\r\n\t\"periodopagoprimas\": \"10\",\r\n\t\"monedapoliza\": \"Dolar\",\r\n\t\"promotorseguros\": \"KENNETH JOEL CEVALLOS MEDINA\",\r\n\t\"asegurados\":[\r\n                  {\r\n          \"parentesco\": \"Asegurado\",\r\n          \"nombre\": \"HANIA WAIDELICH TANTALEAN\",\r\n          \"dni\": \"73185905\",\r\n          \"fechanacimiento\": \"30-12-2001\",\r\n          \"sexo\": \"Femenino\",\r\n          \"direccion\": \"AV. MONTERRICO CHICO 235 LIMA PERU LIMA L33 \",\r\n          \"correo\": \"\"\r\n        }\r\n                        ],\r\n\t\"beneficiarios\":[\r\n              {\r\n          \"parentesco\": \"HEREDEROS LEGALES\",\r\n          \"nombre\": \"Herederos Legales\",\r\n          \"participacion\": \"100\"\r\n        }\r\n                       ],\r\n\t\"coberturas\":[\r\n                {\r\n          \"nombre\": \"Fallecimiento\",\r\n\t\t\t    \"tipo\": \"Principal\",\r\n\t\t\t    \"grupoparentesco\": \"TITULAR\",\r\n\t\t\t    \"sumaasegurada\": 100000.0,\r\n\t\t\t    \"primaanual\": 362.3251\r\n        }\r\n               ,               {\r\n          \"nombre\": \"Sepelio\",\r\n\t\t\t    \"tipo\": \"Adicional\",\r\n\t\t\t    \"grupoparentesco\": \"TITULAR\",\r\n\t\t\t    \"sumaasegurada\": 3000.0,\r\n\t\t\t    \"primaanual\": 115.8545\r\n        }\r\n               ,               {\r\n          \"nombre\": \"Renta Hospitalaria por Accidente\",\r\n\t\t\t    \"tipo\": \"Adicional\",\r\n\t\t\t    \"grupoparentesco\": \"TITULAR\",\r\n\t\t\t    \"sumaasegurada\": 100.0,\r\n\t\t\t    \"primaanual\": 44.7456\r\n        }\r\n               ,               {\r\n          \"nombre\": \"Indemnización por Cirugias\",\r\n\t\t\t    \"tipo\": \"Adicional\",\r\n\t\t\t    \"grupoparentesco\": \"TITULAR\",\r\n\t\t\t    \"sumaasegurada\": 20000.0,\r\n\t\t\t    \"primaanual\": 2410.4506\r\n        }\r\n               ,               {\r\n          \"nombre\": \"Indemnización Adicional por Fallecimiento Accidental\",\r\n\t\t\t    \"tipo\": \"Adicional\",\r\n\t\t\t    \"grupoparentesco\": \"TITULAR\",\r\n\t\t\t    \"sumaasegurada\": 100000.0,\r\n\t\t\t    \"primaanual\": 116.9157\r\n        }\r\n               ,               {\r\n          \"nombre\": \"Dispensa de Pago de Primas\",\r\n\t\t\t    \"tipo\": \"Adicional\",\r\n\t\t\t    \"grupoparentesco\": \"TITULAR\",\r\n\t\t\t    \"sumaasegurada\": 100000.0,\r\n\t\t\t    \"primaanual\": 0.0215\r\n        }\r\n                       ],\r\n\t\"primabasicaanual\": 3050.313,\r\n\t\"primaahorrofrec\": 504.78,\r\n\t\"primatotalfrecuencia\": 2029.9365,\r\n\t\"tipocambio\": \"3.34\",\r\n    \"modopago\":\"CargoEnCuenta\",\r\n\t\"frecuenciapago\": \"Semestral\",\r\n    \"frecuenciameses\": \"6.0\",\r\n\t\"primanetaperiodo\": 1525.1565,\r\n\t\"cargosseguro\":[\r\n                {\r\n          \"anioinicio\": \"1\",\r\n\t\t\t    \"porcenctabasica\": \"-\",\r\n\t\t\t    \"cargofijo\": \"-\",\r\n\t\t\t    \"porcenprimafall\": 60.0\r\n        } ,               {\r\n          \"anioinicio\": \"2\",\r\n\t\t\t    \"porcenctabasica\": \"-\",\r\n\t\t\t    \"cargofijo\": \"-\",\r\n\t\t\t    \"porcenprimafall\": 40.0\r\n        } ,               {\r\n          \"anioinicio\": \"3\",\r\n\t\t\t    \"porcenctabasica\": \"-\",\r\n\t\t\t    \"cargofijo\": \"-\",\r\n\t\t\t    \"porcenprimafall\": 25.0\r\n        } ,               {\r\n          \"anioinicio\": \"4\",\r\n\t\t\t    \"porcenctabasica\": \"-\",\r\n\t\t\t    \"cargofijo\": \"-\",\r\n\t\t\t    \"porcenprimafall\": 20.0\r\n        } ,               {\r\n          \"anioinicio\": \"6\",\r\n\t\t\t    \"porcenctabasica\": \"-\",\r\n\t\t\t    \"cargofijo\": \"-\",\r\n\t\t\t    \"porcenprimafall\": 15.0\r\n        } ,               {\r\n          \"anioinicio\": \"11\",\r\n\t\t\t    \"porcenctabasica\": \"-\",\r\n\t\t\t    \"cargofijo\": \"-\",\r\n\t\t\t    \"porcenprimafall\": 10.0\r\n        } ,               {\r\n          \"anioinicio\": \"21\",\r\n\t\t\t    \"porcenctabasica\": \"-\",\r\n\t\t\t    \"cargofijo\": \"-\",\r\n\t\t\t    \"porcenprimafall\": 0.0\r\n        } ,                   {\r\n          \"anioinicio\": \"1\",\r\n\t\t\t    \"porcenctabasica\":2.5,\r\n\t\t\t    \"cargofijo\": \"-\",\r\n\t\t\t    \"porcenprimafall\": \"-\"\r\n        } ,             {\r\n          \"anioinicio\": \"6\",\r\n\t\t\t    \"porcenctabasica\":0.75,\r\n\t\t\t    \"cargofijo\": \"-\",\r\n\t\t\t    \"porcenprimafall\": \"-\"\r\n        } ,                   {\r\n          \"anioinicio\": \"1\",\r\n\t\t\t    \"porcenctabasica\":\"-\",\r\n\t\t\t    \"cargofijo\": 0.0,\r\n\t\t\t    \"porcenprimafall\": \"-\"\r\n        }         ],\r\n\t\"cargosinversion\":[\r\n                     {\r\n            \"anioinicio\": \"1\",\r\n            \"porcenctaahorro\": 1.5,\r\n            \"cargofijo\": \"-\",\r\n            \"porcenprimaahorro\": \"-\"\r\n          } ,                           {\r\n            \"anioinicio\": \"1\",\r\n            \"porcenctaahorro\": \"-\",\r\n            \"cargofijo\": 0.0,\r\n            \"porcenprimaahorro\": \"-\"\r\n          } ,                            {\r\n            \"anioinicio\": \"1\",\r\n            \"porcenctaahorro\": \"-\",\r\n            \"cargofijo\": \"-\",\r\n            \"porcenprimaahorro\": 0.0\r\n          }           ],\r\n\t\"cargosrescate\":[\r\n               {\r\n            \"anioinicio\": \"1\",\r\n            \"porcenprimafall\": 90.0\r\n          } ,               {\r\n            \"anioinicio\": \"3\",\r\n            \"porcenprimafall\": 45.0\r\n          } ,               {\r\n            \"anioinicio\": \"4\",\r\n            \"porcenprimafall\": 40.0\r\n          } ,               {\r\n            \"anioinicio\": \"5\",\r\n            \"porcenprimafall\": 35.0\r\n          } ,               {\r\n            \"anioinicio\": \"6\",\r\n            \"porcenprimafall\": 25.0\r\n          } ,               {\r\n            \"anioinicio\": \"11\",\r\n            \"porcenprimafall\": 0.0\r\n          }     \r\n  ],\r\n\t\"tasascostoscobertura\":[\r\n              {\r\n\t\t    \"edad\": \"18\",\r\n\t\t    \"tasamensual\": \"0.0550375\"\r\n          } ,               {\r\n\t\t    \"edad\": \"19\",\r\n\t\t    \"tasamensual\": \"0.056794999999999\"\r\n          } ,               {\r\n\t\t    \"edad\": \"20\",\r\n\t\t    \"tasamensual\": \"0.0585525\"\r\n          } ,               {\r\n\t\t    \"edad\": \"21\",\r\n\t\t    \"tasamensual\": \"0.0591075\"\r\n          } ,               {\r\n\t\t    \"edad\": \"22\",\r\n\t\t    \"tasamensual\": \"0.0602175\"\r\n          } ,               {\r\n\t\t    \"edad\": \"23\",\r\n\t\t    \"tasamensual\": \"0.060864999999999\"\r\n          } ,               {\r\n\t\t    \"edad\": \"24\",\r\n\t\t    \"tasamensual\": \"0.06253\"\r\n          } ,               {\r\n\t\t    \"edad\": \"25\",\r\n\t\t    \"tasamensual\": \"0.063177499999999\"\r\n          } ,               {\r\n\t\t    \"edad\": \"26\",\r\n\t\t    \"tasamensual\": \"0.064842499999999\"\r\n          } ,               {\r\n\t\t    \"edad\": \"27\",\r\n\t\t    \"tasamensual\": \"0.066044999999999\"\r\n          } ,               {\r\n\t\t    \"edad\": \"28\",\r\n\t\t    \"tasamensual\": \"0.0678025\"\r\n          } ,               {\r\n\t\t    \"edad\": \"29\",\r\n\t\t    \"tasamensual\": \"0.069559999999999\"\r\n          } ,               {\r\n\t\t    \"edad\": \"30\",\r\n\t\t    \"tasamensual\": \"0.0718725\"\r\n          } ,               {\r\n\t\t    \"edad\": \"31\",\r\n\t\t    \"tasamensual\": \"0.0735375\"\r\n          } ,               {\r\n\t\t    \"edad\": \"32\",\r\n\t\t    \"tasamensual\": \"0.07585\"\r\n          } ,               {\r\n\t\t    \"edad\": \"33\",\r\n\t\t    \"tasamensual\": \"0.078254999999999\"\r\n          } ,               {\r\n\t\t    \"edad\": \"34\",\r\n\t\t    \"tasamensual\": \"0.0822325\"\r\n          } ,               {\r\n\t\t    \"edad\": \"35\",\r\n\t\t    \"tasamensual\": \"0.0851925\"\r\n          } ,               {\r\n\t\t    \"edad\": \"36\",\r\n\t\t    \"tasamensual\": \"0.0903725\"\r\n          } ,               {\r\n\t\t    \"edad\": \"37\",\r\n\t\t    \"tasamensual\": \"0.096754999999999\"\r\n          } ,               {\r\n\t\t    \"edad\": \"38\",\r\n\t\t    \"tasamensual\": \"0.1036925\"\r\n          } ,               {\r\n\t\t    \"edad\": \"39\",\r\n\t\t    \"tasamensual\": \"0.1118325\"\r\n          } ,               {\r\n\t\t    \"edad\": \"40\",\r\n\t\t    \"tasamensual\": \"0.120527499999999\"\r\n          } ,               {\r\n\t\t    \"edad\": \"41\",\r\n\t\t    \"tasamensual\": \"0.130887499999999\"\r\n          } ,               {\r\n\t\t    \"edad\": \"42\",\r\n\t\t    \"tasamensual\": \"0.141339999999999\"\r\n          } ,               {\r\n\t\t    \"edad\": \"43\",\r\n\t\t    \"tasamensual\": \"0.151792499999999\"\r\n          } ,               {\r\n\t\t    \"edad\": \"44\",\r\n\t\t    \"tasamensual\": \"0.162245\"\r\n          } ,               {\r\n\t\t    \"edad\": \"45\",\r\n\t\t    \"tasamensual\": \"0.1732525\"\r\n          } ,               {\r\n\t\t    \"edad\": \"46\",\r\n\t\t    \"tasamensual\": \"0.184814999999999\"\r\n          } ,               {\r\n\t\t    \"edad\": \"47\",\r\n\t\t    \"tasamensual\": \"0.197579999999999\"\r\n          } ,               {\r\n\t\t    \"edad\": \"48\",\r\n\t\t    \"tasamensual\": \"0.211455\"\r\n          } ,               {\r\n\t\t    \"edad\": \"49\",\r\n\t\t    \"tasamensual\": \"0.225977499999999\"\r\n          } ,               {\r\n\t\t    \"edad\": \"50\",\r\n\t\t    \"tasamensual\": \"0.242719999999999\"\r\n          } ,               {\r\n\t\t    \"edad\": \"51\",\r\n\t\t    \"tasamensual\": \"0.260664999999999\"\r\n          } ,               {\r\n\t\t    \"edad\": \"52\",\r\n\t\t    \"tasamensual\": \"0.281015\"\r\n          } ,               {\r\n\t\t    \"edad\": \"53\",\r\n\t\t    \"tasamensual\": \"0.304694999999999\"\r\n          } ,               {\r\n\t\t    \"edad\": \"54\",\r\n\t\t    \"tasamensual\": \"0.329022499999999\"\r\n          } ,               {\r\n\t\t    \"edad\": \"55\",\r\n\t\t    \"tasamensual\": \"0.3551075\"\r\n          } ,               {\r\n\t\t    \"edad\": \"56\",\r\n\t\t    \"tasamensual\": \"0.3817475\"\r\n          } ,               {\r\n\t\t    \"edad\": \"57\",\r\n\t\t    \"tasamensual\": \"0.4083875\"\r\n          } ,               {\r\n\t\t    \"edad\": \"58\",\r\n\t\t    \"tasamensual\": \"0.4339175\"\r\n          } ,               {\r\n\t\t    \"edad\": \"59\",\r\n\t\t    \"tasamensual\": \"0.4611125\"\r\n          } ,               {\r\n\t\t    \"edad\": \"60\",\r\n\t\t    \"tasamensual\": \"0.493024999999999\"\r\n          } ,               {\r\n\t\t    \"edad\": \"61\",\r\n\t\t    \"tasamensual\": \"0.530672499999999\"\r\n          } ,               {\r\n\t\t    \"edad\": \"62\",\r\n\t\t    \"tasamensual\": \"0.578125\"\r\n          } ,               {\r\n\t\t    \"edad\": \"63\",\r\n\t\t    \"tasamensual\": \"0.63788\"\r\n          } ,               {\r\n\t\t    \"edad\": \"64\",\r\n\t\t    \"tasamensual\": \"0.70855\"\r\n          } ,               {\r\n\t\t    \"edad\": \"65\",\r\n\t\t    \"tasamensual\": \"0.784954999999999\"\r\n          } ,               {\r\n\t\t    \"edad\": \"66\",\r\n\t\t    \"tasamensual\": \"0.867279999999999\"\r\n          } ,               {\r\n\t\t    \"edad\": \"67\",\r\n\t\t    \"tasamensual\": \"0.950714999999999\"\r\n          } ,               {\r\n\t\t    \"edad\": \"68\",\r\n\t\t    \"tasamensual\": \"1.03470499999999\"\r\n          } ,               {\r\n\t\t    \"edad\": \"69\",\r\n\t\t    \"tasamensual\": \"1.12443\"\r\n          } ,               {\r\n\t\t    \"edad\": \"70\",\r\n\t\t    \"tasamensual\": \"1.22821499999999\"\r\n          } ,               {\r\n\t\t    \"edad\": \"71\",\r\n\t\t    \"tasamensual\": \"1.35216499999999\"\r\n          } ,               {\r\n\t\t    \"edad\": \"72\",\r\n\t\t    \"tasamensual\": \"1.5056225\"\r\n          } ,               {\r\n\t\t    \"edad\": \"73\",\r\n\t\t    \"tasamensual\": \"1.69274999999999\"\r\n          } ,               {\r\n\t\t    \"edad\": \"74\",\r\n\t\t    \"tasamensual\": \"1.9129\"\r\n          } ,               {\r\n\t\t    \"edad\": \"75\",\r\n\t\t    \"tasamensual\": \"2.16200249999999\"\r\n          } ,               {\r\n\t\t    \"edad\": \"76\",\r\n\t\t    \"tasamensual\": \"2.43552499999999\"\r\n          } ,               {\r\n\t\t    \"edad\": \"77\",\r\n\t\t    \"tasamensual\": \"2.7292125\"\r\n          } ,               {\r\n\t\t    \"edad\": \"78\",\r\n\t\t    \"tasamensual\": \"2.9506575\"\r\n          } ,               {\r\n\t\t    \"edad\": \"79\",\r\n\t\t    \"tasamensual\": \"3.38614749999999\"\r\n          } ,               {\r\n\t\t    \"edad\": \"80\",\r\n\t\t    \"tasamensual\": \"3.7726125\"\r\n          } ,               {\r\n\t\t    \"edad\": \"81\",\r\n\t\t    \"tasamensual\": \"4.2151325\"\r\n          } ,               {\r\n\t\t    \"edad\": \"82\",\r\n\t\t    \"tasamensual\": \"4.72675\"\r\n          } ,               {\r\n\t\t    \"edad\": \"83\",\r\n\t\t    \"tasamensual\": \"5.31588249999999\"\r\n          } ,               {\r\n\t\t    \"edad\": \"84\",\r\n\t\t    \"tasamensual\": \"5.96884\"\r\n          } ,               {\r\n\t\t    \"edad\": \"85\",\r\n\t\t    \"tasamensual\": \"6.68423499999999\"\r\n          } ,               {\r\n\t\t    \"edad\": \"86\",\r\n\t\t    \"tasamensual\": \"7.44893249999999\"\r\n          } ,               {\r\n\t\t    \"edad\": \"87\",\r\n\t\t    \"tasamensual\": \"8.2675575\"\r\n          } ,               {\r\n\t\t    \"edad\": \"88\",\r\n\t\t    \"tasamensual\": \"9.13076749999999\"\r\n          } ,               {\r\n\t\t    \"edad\": \"89\",\r\n\t\t    \"tasamensual\": \"10.0493849999999\"\r\n          } ,               {\r\n\t\t    \"edad\": \"90\",\r\n\t\t    \"tasamensual\": \"10.9340549999999\"\r\n          } ,               {\r\n\t\t    \"edad\": \"91\",\r\n\t\t    \"tasamensual\": \"11.877\"\r\n          } ,               {\r\n\t\t    \"edad\": \"92\",\r\n\t\t    \"tasamensual\": \"12.9059699999999\"\r\n          } ,               {\r\n\t\t    \"edad\": \"93\",\r\n\t\t    \"tasamensual\": \"14.072025\"\r\n          } ,               {\r\n\t\t    \"edad\": \"94\",\r\n\t\t    \"tasamensual\": \"15.5017049999999\"\r\n          } ,               {\r\n\t\t    \"edad\": \"95\",\r\n\t\t    \"tasamensual\": \"17.6112599999999\"\r\n          } ,               {\r\n\t\t    \"edad\": \"96\",\r\n\t\t    \"tasamensual\": \"20.8535699999999\"\r\n          } ,               {\r\n\t\t    \"edad\": \"97\",\r\n\t\t    \"tasamensual\": \"26.3608349999999\"\r\n          } ,               {\r\n\t\t    \"edad\": \"98\",\r\n\t\t    \"tasamensual\": \"36.3996749999999\"\r\n          } ,               {\r\n\t\t    \"edad\": \"99\",\r\n\t\t    \"tasamensual\": \"83.3333333333333\"\r\n          }       ],\r\n\t\"minvigenciamodifcapital\": \"0\",\r\n\t\"periodominmodifcapital\": \"0\",\r\n\t\"maxmodifaniocapital\": \"2\",\r\n\t\"nummaxretirosanio\": \"6\",\r\n\t\"nummaxretirosmes\": \"Ilimitado\",\r\n\t\"montominretiro\": \"100.0\",\r\n\t\"periodominvigencia\": \"30.0\",\r\n\t\"cargoretiroporcentaje\": \"0.5\",\r\n\t\"cargoretirofijo\": \"0\",\r\n\t\"cargoretiromaximo\": \"100.0\",\r\n\t\"minvigenciaprestamo\": \"3.0\",\r\n\t\"maximobosicaprestamo\": \"80.0\",\r\n\t\"interesprestamo\": \"0.0\",\r\n\t\"limitemontodeposito\": \"500000.0\",\r\n\t\"limitevecesaniodeposito\": \"Ilimitado\",\r\n\t\"limitevecesmesdeposito\": \"Ilimitado\",\r\n\t\"cargosprimadeposito\": \"0\",\r\n\t\"montomintransfer\": \"0\",\r\n\t\"fondosinversion\":[\r\n                 {\r\n\t\t    \"cuenta\": \"Cuenta Basica\",\r\n\t\t    \"fondoinversion\": \"Dinámico Dólares\",\r\n\t\t    \"tiporentabilidad\": \"2.0\",\r\n\t\t    \"rentabportafolio\": \"-\",\r\n\t\t    \"rentabadicional\": \"9.0\",\r\n\t\t    \"distribucionprima\": \"1.0\"\r\n\t\t    } ,               {\r\n\t\t    \"cuenta\": \"Cuenta Ahorro\",\r\n\t\t    \"fondoinversion\": \"Dinámico Dólares\",\r\n\t\t    \"tiporentabilidad\": \"2.0\",\r\n\t\t    \"rentabportafolio\": \"-\",\r\n\t\t    \"rentabadicional\": \"9.0\",\r\n\t\t    \"distribucionprima\": \"1.0\"\r\n\t\t    }       \t],\r\n\t\"minvigenciacambioinv\": \"Ilimitado\",\r\n\t\"nummaxcambioinv\": \"Ilimitado\",\r\n\t\"periodomincambioinv\": \"Ilimitado\",\r\n\t\"numenvioseecc\": \"2\",\r\n\t\"periodominenvioseecc\": \"6\",\r\n\t\"fechaemision\": \"17-02-2020\"\r\n}\r\n \r\n}"
+				},
+				"url": {
+					"raw": "https://rsdcatapache01.rimac.com.pe/wsOTCCM/registrar/pedido",
+					"protocol": "https",
+					"host": [
+						"rsdcatapache01",
+						"rimac",
+						"com",
+						"pe"
+					],
+					"path": [
+						"wsOTCCM",
+						"registrar",
+						"pedido"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TEST Apache consultar pedido",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"numOperacion\": \"AE7DB0BF-46D3-9B43-8E74-96EAD115EC9E\"\n}"
+				},
+				"url": {
+					"raw": "https://rsdcatapache01.rimac.com.pe/wsOTCCM/consultar/pedido",
+					"protocol": "https",
+					"host": [
+						"rsdcatapache01",
+						"rimac",
+						"com",
+						"pe"
+					],
+					"path": [
+						"wsOTCCM",
+						"consultar",
+						"pedido"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PROD IHS Registrar Pedido",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://serviciosweb01.rimac.com.pe/wsOTCCM/registrar/pedido",
+					"protocol": "http",
+					"host": [
+						"serviciosweb01",
+						"rimac",
+						"com",
+						"pe"
+					],
+					"path": [
+						"wsOTCCM",
+						"registrar",
+						"pedido"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "TEST Apache Callback",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"origen\": {\r\n    \"sistema\": \"Flexivida\",\r\n    \"ambiente\": \"TEST\",\r\n    \"proceso\": \"FLEXIVIDA_001\",\r\n    \"subproceso\": \"B-001-01\",\r\n    \"fechadeEnvio\": \"01/08/2019 11:04:02\",\r\n    \"usuario\": \"JGOMEZR\",\r\n    \"identificador\": [\r\n      \"32452054\"\r\n    ]\r\n  },\r\n  \"jsonRespuesta\": {\r\n    \"detallePDF\": {\r\n      \"indPDF\": \"S\",\r\n      \"indExito\": \"S\",\r\n      \"codEstado\": \"0\",\r\n      \"msgEstado\": \"DOCUMENTOS GENERADOS\"\r\n    },\r\n    \"detalleTXT\": {\r\n      \"indTXT\": \"N\",\r\n      \"archivo\": null,\r\n      \"indExito\": null,\r\n      \"codEstado\": null,\r\n      \"msgEstado\": null\r\n    },\r\n    \"detalleHTML\": {\r\n      \"indHTML\": \"N\",\r\n      \"archivo\": null,\r\n      \"indExito\": null,\r\n      \"codEstado\": null,\r\n      \"msgEstado\": null\r\n    },\r\n    \"detalleCorreo\": {\r\n      \"indCorreo\": \"N\",\r\n      \"indExito\": null,\r\n      \"codEstado\": null,\r\n      \"msgEstado\": null\r\n    },\r\n    \"detalleTrazabilidad\": {\r\n      \"indTrazabilidad\": \"N\",\r\n      \"indExito\": null,\r\n      \"codEstado\": null,\r\n      \"msgEstado\": null,\r\n      \"valorretorno\": null\r\n    },\r\n    \"almacenamientoS3\": {\r\n      \"indPDF\": {\r\n        \"indS3PDF\": \"S\",\r\n        \"indExito\": \"S\",\r\n        \"codEstado\": \"0\",\r\n        \"msgEstado\": \"Documento Subido a S3\",\r\n        \"rutaURLDestinoPDF\": \"https://ue1stgdesaas3prv001.s3.amazonaws.com/FlexiVida/Documentos/PDFDocumento_FLEXIVIDAPRUEBA5.pdf\"\r\n      },\r\n      \"indTXT\": {\r\n        \"indS3TXT\": \"N\",\r\n        \"indExito\": null,\r\n        \"codEstado\": null,\r\n        \"msgEstado\": null,\r\n        \"rutaURLDestinoTXT\": null\r\n      },\r\n      \"indHTML\": {\r\n        \"indS3HTML\": \"N\",\r\n        \"indExito\": null,\r\n        \"codEstado\": null,\r\n        \"msgEstado\": null,\r\n        \"rutaURLDestinoHTML\": null\r\n      }\r\n    },\r\n    \"almacenamientoFilenet\": null,\r\n    \"almacenamientoLocal\": {\r\n      \"indPDF\": {\r\n        \"indLocalPDF\": \"S\",\r\n        \"indExito\": \"S\",\r\n        \"codEstado\": \"0\",\r\n        \"msgEstado\": \"Se guardo correctamente\",\r\n        \"rutaDestinoPDF\": \"\\\\\\\\172.23.2.115\\\\Flexivida\\\\Documento_FLEXIVIDAPRUEBA5.pdf\"\r\n      },\r\n      \"indTXT\": {\r\n        \"indLocalTXT\": \"N\",\r\n        \"indExito\": null,\r\n        \"codEstado\": null,\r\n        \"msgEstado\": null,\r\n        \"rutaDestinoTxt\": null\r\n      },\r\n      \"indHTML\": {\r\n        \"indLocalHTML\": \"N\",\r\n        \"indEstado\": null,\r\n        \"codEstado\": null,\r\n        \"msgEstado\": null,\r\n        \"rutaDestinoHTML\": null\r\n      }\r\n    },\r\n    \"envioSMS\": {\r\n      \"indSMS\": \"N\",\r\n      \"numeroRespuesta\": {\r\n        \"numero\": null,\r\n        \"archivo\": null,\r\n        \"indExito\": null,\r\n        \"codEstado\": null,\r\n        \"msgEstado\": null,\r\n        \"valorRetorno\": null\r\n      }\r\n    }\r\n  },\r\n  \"numoperacion\": \"D43102EE-6BA3-5B4A-9DF0-DDC2D93B2B0B\",\r\n  \"estado\": \"FINALIZADO\"\r\n}"
+				},
+				"url": {
+					"raw": "https://rsdcatapache01.rimac.com.pe/APIFlexivida/ccm-callback/",
+					"protocol": "https",
+					"host": [
+						"rsdcatapache01",
+						"rimac",
+						"com",
+						"pe"
+					],
+					"path": [
+						"APIFlexivida",
+						"ccm-callback",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
