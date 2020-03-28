@@ -1,0 +1,89 @@
+Index: Application/Core/clienteRimac/src/com/consisint/acsele/interfaces/investmentfund/costbycoveragefund/CostbyCoverageOfFundsRecordsProcessor.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- Application/Core/clienteRimac/src/com/consisint/acsele/interfaces/investmentfund/costbycoveragefund/CostbyCoverageOfFundsRecordsProcessor.java	(revision 5ddf6b71e07c50d78fa2470d9478771849e704c3)
++++ Application/Core/clienteRimac/src/com/consisint/acsele/interfaces/investmentfund/costbycoveragefund/CostbyCoverageOfFundsRecordsProcessor.java	(revision )
+@@ -6,6 +6,7 @@
+ import com.consisint.acsele.life.fundmoventpolicy.persister.FundMoventPolicyPersister;
+ import com.consisint.acsele.life.fundtype.model.EnumFundAccountType;
+ import com.consisint.acsele.life.fundtype.model.FundConfCovSymbolsModel;
++import com.consisint.acsele.openapi.policy.DynamicData;
+ import com.consisint.acsele.persistent.IDDBFactory;
+ import com.consisint.acsele.policy.api.InsuranceObject;
+ import com.consisint.acsele.policy.api.Policy;
+@@ -21,8 +22,11 @@
+ import com.consisint.acsele.util.evaluator.EvaluationConstants;
+ import com.consisint.acsele.util.evaluator.EvaluationContext;
+ import com.consisint.acsele.util.evaluator.ExpresionEvaluator;
++import com.consisint.acsele.util.evaluator.Funciones;
++import com.consisint.acsele.util.evaluator.SymbolAttributes;
+ import com.consisint.acsele.util.logging.AcseleLogger;
+ 
++import java.math.BigDecimal;
+ import java.sql.Connection;
+ import java.sql.PreparedStatement;
+ import java.sql.Types;
+@@ -102,6 +106,26 @@
+                                     fundMoventPolicy = fundMoventPolicyModel1;
+                                 }*/
+                                 //if (fundMoventPolicy != null) {
++
++                               // if (log.isDebugEnabled() ){
++                                    System.out.print("Ejecucion del Job Costo por Cobertura");
++                                    SymbolAttributes policyInitial =  new SymbolAttributes(policy.getInitialDate().toString(), (double) DateUtil.getValueFromDate(policy.getInitialDate()) , false);
++                                    SymbolAttributes policyPk = new SymbolAttributes(String.valueOf(policy.getPolicyPk()),0.0, false);
++                                    double mothDay = Funciones.getMonthDate(policyInitial.value(),  "Ultimo");
++                                    double workDate = Funciones.getWorkDay(mothDay,"ACTUAL");
++                                    double porrata = Funciones.getProrrataMonth(policyInitial,"3") ;
++
++                                    BigDecimal SaldoBasica = BigDecimal.valueOf(Funciones.getFundBalance(policyPk,"Cuenta Basica","",workDate));
++                                    BigDecimal SaldoAhorro = BigDecimal.valueOf(Funciones.getFundBalance(policyPk,"Cuenta Ahorro","",workDate));
++
++
++
++                                    System.out.println("Evaluando getMonthDate() Resultado: "+mothDay +" Fecha: "+DateUtil.getDateFromValue((int) mothDay)  );
++                                    System.out.println("Evaluando getWorkDay() Resultado: "+workDate +" Fecha: "+DateUtil.getDateFromValue((int) workDate)  );
++                                    System.out.println("Evaluando getProrrataMonth() Resultado: "+porrata );
++                                    System.out.println("Evaluando getFundBalance() Cuenta Basica Resultado: "+SaldoBasica );
++                                    System.out.println("Evaluando getProrrataMonth() Cuenta Ahorro  Resultado: "+SaldoAhorro );
++                              //  }
+                                     for (com.consisint.acsele.policy.api.Coverage coverage : insuranceObject.getCoverageList()) {
+                                         /* Publico simbolos de cobertura */
+                                         ((EvaluatedCoverage) coverage).publishAllSymbolsToUp(evaluator);
+@@ -113,6 +137,34 @@
+                                             int symbolAccountType = lineFundSymbol.getAccountType();
+                                             double formulaEvaluated = evaluator.evaluate(lineFundSymbol.getFormula());
+                                             formulaEvaluated = lineFundSymbol.isDebit() ? (-1) * formulaEvaluated : formulaEvaluated;
++                                          //  if (log.isDebugEnabled() ){
++                                                System.out.println("--   Evaluacion Simbolo por Cobertura  -------------------------------------------");
++                                                System.out.println("Cobertura: "+coverage.getDescription());
++                                                System.out.println("Simbolo: "+lineFundSymbol.getDescription() );
++                                                System.out.println("Resultado Formula: "+formulaEvaluated );
++                                                System.out.println("Formula: "+lineFundSymbol.getFormula() );
++
++                                                System.out.println("Evaluando la DEVN --------------------------  ");
++                                                SymbolAttributes policyInitialDa =  new SymbolAttributes(policy.getInitialDate().toString(), (double) DateUtil.getValueFromDate(policy.getInitialDate()) , false);
++
++                                                double codprod = policy.getProduct().getDynamicData().getValue("CodigoProducto");
++                                                DynamicData dynamicPlan = policy.listIO().iterator().next().getAgregInsObjectType().getPlan().getDynamicData();
++                                                double codigoPlan = dynamicPlan.getValue("CodigoPlan" );
++                                                double CodigoCobertura =  coverage.getDynamicData().getValue("COVCodigoCobertura");
++                                                double edad_aseg = coverage.getDynamicData().getValue("COVGrupoEdad");
++                                                double TipoRiesgoValue = policy.getDynamicData().getValue("TipoRiesgo");
++                                                double TipoRenta = policy.getDynamicData().getValue("TipoRenta");
++                                                double sexoAsegurado = coverage.getDynamicData().getValue("COVTablaMortalidad");
++
++                                                String resultDEV = "CodigoProducto = " + codprod + " , CodigoPlan = " + codigoPlan + " , COVCodigoCobertura = " + CodigoCobertura + " , TipoDeRiesgo = "+ TipoRiesgoValue  + " ,Sexo = " + sexoAsegurado + " ,TipoRentaDT = "+TipoRenta+" ,EdadDT = "+ edad_aseg ;
++                                                System.out.println(" Buscando en la DEV: DTCostosCoberturaMII ");
++                                                System.out.println(resultDEV );
++                                                double devTablaDinamica = Funciones.devN("DTCostosCoberturaMII", resultDEV, policyInitialDa.getValue(), "Tasa") ;
++                                               // System.out.print("Buscando en la DEV: DTCostosCoberturaMII  Propiedades: "+"CodigoProducto = " + codprod + " , CodigoPlan = " + codigoPlan + " , COVCodigoCobertura = " + CodigoCobertura + " , TipoDeRiesgo = " + TipoRiesgoValue  + " ,Sexo = " + sexoAsegurado + " ,TipoRentaDT = "+TipoRenta+" ,EdadDT = " + edad_aseg );
++                                                System.out.println("Resultado de la DEVN: "+devTablaDinamica);
++                                        //    }
++
++
+                                             evaluator.addSymbol(lineFundSymbol.getSymbol(), String.valueOf(formulaEvaluated), formulaEvaluated, true);
+                                             if ((symbolAccountType == EnumFundAccountType.BASIC.getValue() && agregatedFund.getFundAccountModel().isBasic()) || (symbolAccountType == EnumFundAccountType.SAVINGS.getValue() && !agregatedFund.getFundAccountModel().isBasic())) {
+                                                 // Evaluación de formula
